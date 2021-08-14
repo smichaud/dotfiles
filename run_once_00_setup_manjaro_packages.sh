@@ -23,7 +23,7 @@ yay -S google-cloud-sdk kubectl k9s cloud-sql-proxy-bin # Setup with `gcloud ini
 yay -S unzip
 yay -S gnu-netcat
 yay -S bitwarden-cli
-yay -S ulauncher # Then install your extensions
+yay -S ulauncher-git # Then install your extensions
 yay -S pulseaudio-bluetooth
 
 yay -S nemo
