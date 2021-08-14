@@ -20,7 +20,7 @@ sudo usermod -aG docker $USER
 
 # yay -S nvidia-docker
 
-npm install -g markdownlint-cli
+sudo npm install -g markdownlint-cli
 
 docker run --name mongo_local_server -p 27017:27017 -v /home/smichaud/MongoData/:/data/db -d mongo
 sudo snap install robo3t-snap

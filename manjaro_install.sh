@@ -40,3 +40,15 @@ yay -S --needed --nocleanmenu --nodiffmenu discord_arch_electron
 yay -S --needed --nocleanmenu --nodiffmenu teamspeak3
 
 yay -S --needed --nocleanmenu --nodiffmenu google-chrome
+
+yay -S --needed --nocleanmenu --nodiffmenu \
+    bash-language-server \
+    dockerfile-language-server \
+    rust-analyzer \
+    vim-language-server \
+    yaml-language-server \
+    vscode-css-languageserver-bin \
+    vscode-html-languageserver \
+    vscode-json-languageserver \
+    pyright \
+    lua-language-server
