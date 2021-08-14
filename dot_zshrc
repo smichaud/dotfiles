@@ -1,0 +1,412 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=500000
+SAVEHIST=500000
+
+export TERMINAL=kitty
+export EDITOR=nvim
+export BROWSER=google-chrome-stable
+alias vim='nvim'
+
+if [[ -f /usr/share/fzf/completion.zsh ]]; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
+export RIPGREP_CONFIG_PATH="~/Workspace/linux-utils/rc/.ripgreprc"
+export FZF_DEFAULT_COMMAND="rg --hidden --files --ignore-file /home/smichaud/Workspace/linux-utils/rc/.ignore"
+if [[ -f ~/.secret_aliases ]]; then
+    . ~/.secret_aliases
+fi
+
+export PYTHONSTARTUP=~/.pythonrc
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/Programs/gcloud
+export PATH=$PATH:~/Programs/k9s_Linux_x86_64
+#export PATH=$PATH:~/Programs/kubectl_1_18_0
+#source <(kubectl completion zsh)
+export PATH=$PATH:~/Libraries/geckodriver-v0.26.0-linux64
+export PATH=$PATH:~/Programs/terraform
+autoload -U +X bashcompinit && bashcompinit
+
+# For the Google Drive cli tool and hub (git wrapper with Github tools)
+export DRIVE_CLI_PATH=$HOME/Programs/go/bin/bin
+export GOPATH=$HOME/Programs/go/bin/
+export PATH=$PATH:$GOPATH:$DRIVE_CLI_PATH
+fpath=(~/.zsh/completions $fpath) 
+
+#export TF_CPP_MIN_LOG_LEVEL=2 # Prevent TensorFlow warning
+#export TF_VERBOSE=1 # Custom var, for our training, to display loading bar
+#export TF_CPP_MIN_LOG_LEVEL=3 # Prevent TF warning logging
+#export TF_FORCE_GPU_ALLOW_GROWTH=true
+export LD_LIBRARY_PATH="/opt/cuda/lib64/:${LD_LIBRARY_PATH}"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# eval "$(ssh-agent -s)" &> /dev/null
+# ls ~/.ssh | egrep -v '\.pub|\.pem|known_hosts|authorized_keys' | xargs -I@ ssh-add ~/.ssh/@ 2>/dev/null
+
+# PS1 / PROMPT section
+setopt PROMPT_SUBST
+get_current_branch_name () {
+    if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+        echo "%{$reset_color%} on %{$fg[yellow]%}$(git branch | grep \* | cut -d ' ' -f2)"
+        #echo "${BASE0} on ${YELLOW}$(git branch | grep \* | cut -d ' ' -f2)${RESET}"
+    else
+        echo ""
+    fi;
+}
+
+autoload -U colors && colors
+PROMPT='%{$fg[blue]%}[%*]%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[cyan]%}%M%{$reset_color%}:%{$fg[blue]%}%~$(get_current_branch_name)\$ %{$reset_color%}'
+
+
+# Prevent save in history when prefixed with space
+setopt hist_ignore_space
+# No need to cd !
+setopt auto_cd
+# Add cd to a stack, then use cd -<number> or cd +<number>
+setopt AUTO_PUSHD
+# Extend from regex?
+setopt extendedglob
+
+# Smart Case Completion: small letters will match small and capital letters
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# Advanced tab-completion
+autoload -Uz compinit && compinit
+# Autocomplete with 'highlight menu' style
+zstyle ':completion:*' menu select
+
+# Start:Change cursor according to vi mode (insert/normal)
+function zle-keymap-select zle-line-init
+{
+    case $KEYMAP in
+      vicmd)      print -n '\033[0 q';; # block cursor
+      viins|main) print -n '\033[6 q';; # line cursor
+    esac
+    zle reset-prompt
+    zle -R
+}
+function zle-line-finish
+{
+    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+# End: Change cursor according to vi mode (insert/normal)
+
+# To see available commands: man zshzle
+# Vi mode
+bindkey -v
+bindkey -M viins '^k' history-beginning-search-backward
+bindkey -M emacs '^k' history-beginning-search-backward
+bindkey -M viins '^j' history-beginning-search-forward
+bindkey -M emacs '^j' history-beginning-search-forward
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+bindkey -M viins '^a' beginning-of-line
+bindkey -M viins '^e' end-of-line
+bindkey -M viins '^w' backward-kill-word
+
+# Fix keys (delete, home...) ... copied from internet
+# To find a key code: `cat<enter><key>`
+bindkey -M viins '^[[2~' overwrite-mode
+bindkey -M vicmd '^[[2~' overwrite-mode
+bindkey -M emacs '^[[2~' overwrite-mode
+#vi-insert, vi-replace?
+
+bindkey -M viins '^[[3~' delete-char
+bindkey -M vicmd '^[[3~' delete-char
+bindkey -M emacs '^[[3~' delete-char
+
+bindkey -M viins '^[[H' beginning-of-line
+bindkey -M vicmd '^[[H' beginning-of-line
+bindkey -M emacs '^[[H' beginning-of-line
+
+bindkey -M viins '^[[F' end-of-line
+bindkey -M vicmd '^[[F' end-of-line
+bindkey -M emacs '^[[F' end-of-line
+
+bindkey -M viins '^[[5~' beginning-of-line
+bindkey -M vicmd '^]]5~' beginning-of-line
+bindkey -M emacs '^]]5~' beginning-of-line
+
+bindkey -M viins '^[[6~' end-of-line
+bindkey -M vicmd '^]]6~' end-of-line
+bindkey -M emacs '^]]6~' end-of-line
+###########################################################################
+
+# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1
+
+# Expand aliases (copied from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/globalias/globalias.plugin.zsh)
+globalias() {
+   zle _expand_alias
+   zle expand-word
+}
+zle -N globalias
+
+# control-space expands all aliases, including global
+bindkey -M emacs "^ " globalias
+bindkey -M viins "^ " globalias
+
+bindkey -M emacs " " magic-space
+bindkey -M viins " " magic-space
+
+# control-space during searches
+bindkey -M isearch "^ " magic-space
+
+# General
+alias monitorclone="xrandr --output eDP-1-1 --mode $(xrandr | grep HDMI -A 1 | awk '{print $1}' | sed -n 2p)"
+# Required by termite for backspace to work (alternatively install terminfo for termite on remote)
+alias ssh='TERM=xterm-256color && ssh'
+
+##### Quick edit
+alias notes='cd ~/Workspace/notes && nvim job/log.md'
+alias kittyconf='nvim ~/.config/kitty/kitty.conf'
+alias termiteconf='nvim ~/.config/termite/config'
+alias zshrc='nvim ~/.zshrc'
+alias zrc='nvim ~/.zshrc'
+alias vimrc='cd ~/.config/nvim/ && nvim init.vim'
+alias vrc='cd ~/.config/nvim/ && nvim init.vim'
+alias snippets='cd ~/Workspace/vim-snippets/UltiSnips/ && nvim'
+alias codesetting='cd ~/.config/Code/User/settings.json && nvim .'
+alias i3config='nvim ~/.i3/config'
+
+##### Notes
+alias gitreminder='cat ~/Workspace/linux-utils/Notes/git.md'
+alias vimreminder='cat ~/Workspace/linux-utils/Notes/vim.md'
+alias postgrereminder='cat ~/Workspace/linux-utils/Notes/postgre.md'
+
+# pgcli (list tables with \dt)
+alias pglocal='pgcli postgres://postgres:canex@localhost:5432/sewer_inspection_local'
+alias pgdev='pgcli postgres://postgres:canex@localhost:5432/sewer_inspection_local'
+
+# Python Poetry
+alias pt='poetry '
+alias pti='poetry install '
+alias pta='poetry add '
+alias ptu='poetry update'
+alias ptr='poetry run '
+alias ptrp='poetry run python '
+alias ptrpm='poetry run python main.py'
+alias ptrpt='poetry run pytest --disable-pytest-warnings'
+alias ptrptnotend='poetry run pytest -m "not end_to_end" --disable-pytest-warnings'
+alias pts='poetry shell '
+
+# Yarn
+alias yi='yarn install'
+alias ys='yarn start'
+alias yt='DEBUG_PRINT_LIMIT=0 yarn test'
+
+##### Set environment variable (replace pipenv feature for me)
+alias setenv='set -a && source .env'
+
+##### Docker
+alias di='docker image '
+alias dc='docker container '
+
+##### Git
+alias gitco='git checkout '
+alias gitcob='git checkout -b'
+
+alias gits='git status -u '
+alias gita='git add '
+
+alias gitc='git commit '
+alias gitcm='git commit -m '
+alias gitcam='git commit -am'
+
+alias gitr='git rm '
+alias gitfa='git fetch --all '
+alias gitpl='git pull '
+alias gitps='git push '
+alias gitd='git diff '
+alias gitdt='git difftool '
+
+alias gitb='git branch '
+alias gitbd='git branch -D'
+alias gitbclean='git fetch --prune && git branch | grep -v "master" | xargs git branch -D'
+alias gitl='git log --pretty=format:"%C(yellow)%h %Cblue%>(12)%ar %Cgreen%<(7)%aN%Cred%d %Creset%s" --graph --max-count=30 '
+alias gitla='git log --pretty=format:"%C(yellow)%h %Cblue%>(12)%ar %Cgreen%<(7)%aN%Cred%d %Creset%s" --graph '
+alias gitt='git tag '
+
+alias gitta='git tag -a "version" -m "comment"'
+alias gittl="git fetch --all --tags && git tag -l --sort=-creatordate --format='%(creatordate):  %(refname:short) %(subject)'"
+alias gittp='git push --tags'
+
+# From https://tighten.co/blog/open-github-pull-request-from-terminal
+function gitprcreate() {
+  github_url=`git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#https://#' -e 's@com:@com/@' -e 's%\.git$%%' | awk '/github/'`;
+  branch_name=`git symbolic-ref HEAD | cut -d"/" -f 3,4`;
+  pr_url=$github_url"/compare/develop..."$branch_name
+  echo $pr_url
+  xdg-open $pr_url
+}
+
+##### Google Cloud
+alias gci='gcloud compute instances '
+alias gcs='gcloud compute ssh '
+
+
+##### Command replacements
+alias cat='bat'
+alias ls='lsd --group-dirs=first'
+alias du='duf'
+alias top='btm' # bottom
+# alternative to 'curl' --> curlie 
+alias cl='curlie'
+
+##### Command shortcuts
+alias ....="cd ../.."
+alias .2="cd ../.."
+alias ......="cd ../../.."
+alias .3="cd ../../.."
+alias ........="cd ../../../.."
+alias .4="cd ../../../.."
+alias ll='ls -lh '
+alias la='ls -lAh '
+alias tree='tree --dirsfirst '
+alias yayu='yay -Syu --devel'
+alias yayr='yay -R'
+
+# Search yay with fzf
+yays() {
+    yay -Slq | fzf --multi --preview 'bat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' | xargs -ro yay -S
+}
+# Preview with fzf
+alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+alias grep='grep --color'
+alias grepseb='grep --color --exclude-dir={node_modules,build,.git,.terraform,.idea} -Ern "PATTERN" .'
+alias findseb='find . -not -path "*node_modules/*" -print | grep --color -i TEXT'
+alias sedseb='find . -type f | xargs sed "s/WORD1/WORD2/g w /dev/stdout" -i'
+
+alias cs='curl cht.sh/'
+alias count='ls | wc -l'
+
+alias fopen='xdg-open '
+alias rsync='rsync -ah --info=progress2 '
+alias trash='trash-put '
+# X clipboard manipulations
+alias clipdset='xclip -selection clipboard ' # echo "Text" | clipset
+alias clipget='xclip -selection clipboard -o '
+alias clipexec='xclip -selection clipboard -o | xargs -L 1 xargs -t' # execute 
+
+# Reapeat last command in sudo
+# zsh have the r command buildin...
+alias sr='sudo $(fc -ln -1)'
+alias please='sudo $(fc -ln -1)'
+
+alias vimtex='nvim . --servername VIM'
+
+# Quick cd
+alias dbtools='cd ~/Workspace/prototypes/db-tools/'
+alias lu='cd ~/Workspace/linux-utils/'
+alias sandbox='cd ~/Workspace/sandbox'
+
+alias ddb='cd ~/Workspace/pipe-inspection/tools/dashdev/backend'
+alias ddf='cd ~/Workspace/pipe-inspection/tools/dashdev/frontend'
+alias dda='cd ~/Workspace/pipe-inspection/tools/dashdev/azure'
+
+alias xiok8s='cd ~/Workspace/k8s-stuff'
+
+alias xio='cd ~/Workspace/pipe-inspection'
+
+alias xiob='cd ~/Workspace/pipe-inspection/backend'
+alias xiobs='cd ~/Workspace/pipe-inspection/backend && poetry run python main.py'
+alias xiobss='cd ~/Workspace/pipe-inspection/backend && pti -q && poetry run alembic -c server/database/migrations/alembic.ini upgrade head && ptrpm'
+
+alias xioi='(cd ~/Workspace/pipe-inspection/frontend/ && yarn install)'
+alias xiobl='(cd ~/Workspace/pipe-inspection/frontend/ && yarn build:libs)'
+alias xioa='cd ~/Workspace/pipe-inspection/frontend/analysis/'
+alias xioas='cd ~/Workspace/pipe-inspection/frontend/analysis/ && yarn start'
+alias xioass='xioi && xiobl && cd ~/Workspace/pipe-inspection/frontend/analysis/ && yarn start'
+
+alias xioe2e='cd ~/Workspace/pipe-inspection/frontend/e2e-tests/'
+alias xioe2es='cd ~/Workspace/pipe-inspection/frontend/e2e-tests/'
+
+alias xioml='cd ~/Workspace/pipe-inspection/machine_learning'
+alias xiomltrain='cd ~/Workspace/pipe-inspection/machine_learning/training'
+alias xiomltrainc='cd ~/Workspace/pipe-inspection/machine_learning/training && code .'
+alias xiomlml='cd ~/Workspace/pipe-inspection/machine_learning/xpectio_ml'
+alias xiomldata='cd ~/Workspace/pipe-inspection/machine_learning/data_operations/'
+alias xiomldoc='cd ~/Workspace/pipe-inspection/machine_learning/documentation'
+alias xiomlproto='cd ~/Workspace/pipe-inspection/machine_learning/prototypes'
+
+alias xiopyclient='cd ~/Workspace/pipe-inspection/services/api_client'
+alias xioschemas='cd ~/Workspace/pipe-inspection/xpectio_schemas'
+
+alias xiotools='cd ~/Workspace/pipe-inspection/tools'
+alias xioservices='cd ~/Workspace/pipe-inspection/services'
+alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
+alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions'
+alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
+alias xioreport='cd ~/Workspace/pipe-inspection/services/report_generation'
+
+alias xiofrontend='cd ~/Workspace/pipe-inspection/frontend/'
+alias xiojsclient='cd ~/Workspace/pipe-inspection/frontend/libs/client/'
+alias xiovalidations='cd ~/Workspace/pipe-inspection/frontend/libs/validations/'
+alias xioforms='cd ~/Workspace/pipe-inspection/frontend/libs/forms/'
+alias xiof='cd ~/Workspace/pipe-inspection/frontend/field-v2/'
+
+alias management='cd ~/Workspace/management-app/'
+alias employeurd='cd ~/Workspace/prototypes/employeurd-filler/'
+
+alias pi='cd ~/Workspace/pi/'
+alias mpi='cd ~/Workspace/mounted-pi/'
+alias gt='cd ~/Workspace/pi/green-thumb/'
+alias gtb='cd ~/Workspace/pi/green-thumb/backend/'
+alias gtf='cd ~/Workspace/pi/green-thumb/frontend/'
+alias dabot='cd ~/Workspace/pi/dabot/'
+alias dabotb='cd ~/Workspace/pi/dabot/backend/'
+alias dabotf='cd ~/Workspace/pi/dabot/frontend/'
+
+alias wdata='cd ~/Workspace/data'
+alias md='cd /mnt/data'
+
+alias :q='exit'
+
+extract () {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf $1                              ;;
+            *.tar.gz)    tar xvzf $1                              ;;
+            *.bz2)       bunzip2 $1                               ;;
+            *.rar)       unrar x $1                               ;;
+            *.gz)        gunzip $1                                ;;
+            *.tar)       tar xvf $1                               ;;
+            *.tbz2)      tar xvjf $1                              ;;
+            *.tgz)       tar xvzf $1                              ;;
+            *.zip)       unzip $1                                 ;;
+            *.Z)         uncompress $1                            ;;
+            *.7z)        7z x $1                                  ;;
+            *.zip)       unzip -d extracted $1                    ;;
+            *)           echo "don't know how to extract '$1'..." ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
+}
+
+mongodump() {
+    echo "Dump in the docker container..."
+    docker exec -it mongo_local_server mongodump -d pipeDefectsDetection -o /temp_dump/
+    echo "Copy on host..."
+    docker cp mongo_local_server:/temp_dump/ $1
+    echo "Delete from docker container..."
+    docker exec -it mongo_local_server rm -rf /temp_dump/
+}
+
+# Reset directory / file permissions to default in linux
+reset_permissions() {
+    sudo find $1 -type d -exec sudo chmod 755 {} + && sudo find $1 -type f -exec sudo chmod 644 {} +
+}
+
+# Mount drive
+alias mountgt='sshfs pi@greenthumb.local:/home/pi/Workspace/pi/green-thumb/ /home/smichaud/Workspace/mounted-pi/'
+alias mountpiproto='sshfs pi@piproto.local:/home/pi/Workspace/pi/ /home/smichaud/Workspace/mounted-pi/'
