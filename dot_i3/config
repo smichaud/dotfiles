@@ -104,23 +104,23 @@ mode "$mode_system" {
 #bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && vol=$(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }') && notify-send -h string:bgcolor:#000000 -h string:fgcolor:#ffffff "Volume down: $vol"
 #bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && vol=$(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }') && notify-send -h string:bgcolor:#000000 -h string:fgcolor:#ffffff "Volume up: $vol"
 
-#bindsym Control+Mod1+minus exec /home/smichaud/Workspace/linux-utils/I3Setup/set-brighness.sh down
-#bindsym Control+Mod1+plus exec  /home/smichaud/Workspace/linux-utils/I3Setup/set-brighness.sh up
+#bindsym Control+Mod1+minus exec ~/.scripts/set-brighness.sh down
+#bindsym Control+Mod1+plus exec  ~/.scripts/set-brighness.sh up
 
-#bindsym XF86TouchpadToggle exec ~/Workspace/linux-utils/I3Setup/touchpad-toggle.sh
-#bindsym $mod+b exec ~/Workspace/linux-utils/I3Setup/bluetooth-toggle.sh
+#bindsym XF86TouchpadToggle exec ~/scripts/touchpad-toggle.sh
+#bindsym $mod+b exec ~/scripts/bluetooth-toggle.sh
 
 bindsym $mod+s exec flameshot gui
 bindsym $mod+Shift+s exec peek
 bindsym $mod+t exec --no-startup-id teamspeak3
 bindsym $mod+Shift+t exec --no-startup-id teams
 
-exec /home/smichaud/Workspace/linux-utils/I3Setup/set-monitors.sh
-bindsym $mod+w exec ~/Workspace/linux-utils/I3Setup/set-workspaces.sh
+exec ~/.scripts/set-monitors.sh
+bindsym $mod+w exec ~/scripts/set-workspaces.sh
 
 exec_always --no-startup-id sbxkb
-bindsym $mod+space exec ~/Workspace/linux-utils/I3Setup/set-keyboard.sh toggle
-exec ~/Workspace/linux-utils/I3Setup/set-keyboard.sh
+bindsym $mod+space exec ~/scripts/set-keyboard.sh toggle
+exec ~/scripts/set-keyboard.sh
 
 # Automatically Started Applications
 #exec urxvtd -q -o -f # URxvt daemon

@@ -1,0 +1,15 @@
+# Ignore file for fzf
+
+node_modules/
+.git/
+__pycache__/
+.egg-info/
+.venv/
+.pytest_cache/
+.vscode/
+.mozilla/
+google-chrome/
+gcloud/logs/
+nvim/plugged/
+.fontconfig/
+MongoData/

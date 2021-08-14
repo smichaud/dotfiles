@@ -6,10 +6,10 @@ if [ "$1" == "toggle" ]; then
     current_keyboard="$(setxkbmap -query | grep layout | tr -d ' ' | cut -d: -f 2)"
     if [ "$current_keyboard" == "us" ]; then
         setxkbmap ca fr
-        notify-send --icon="~/Workspace/linux-utils/I3Setup/canada.png" "Keyboard" "Set to 'ca fr'"
+        notify-send --icon="~/Pictures/flag-canada.png" "Keyboard" "Set to 'ca fr'"
     else
         setxkbmap us
-        notify-send --icon="~/Workspace/linux-utils/I3Setup/usa.png" "Keyboard" "Set to 'us'"
+        notify-send --icon="~/Pictures/flag-usa.png" "Keyboard" "Set to 'us'"
     fi
 fi
 
