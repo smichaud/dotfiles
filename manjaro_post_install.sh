@@ -5,9 +5,9 @@ sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
 pipx install poetry
-poetry completions zsh >~./zsh/completions/_poetry
+mkdir -p ~/.zsh/completions
+poetry completions zsh >~/.zsh/completions/_poetry
 poetry config virtualenvs.in-project true
-yay -S visual-studio-code
 
 kubectl completion zsh
 # Setup with `gcloud init`
