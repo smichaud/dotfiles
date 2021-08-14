@@ -28,3 +28,14 @@ git remote add origin git@github.com:smichaud/dotfiles.git
 
 Copy the public key to Github \> profile icon \> setting \> SSH and GPG
 keys \> add it!
+
+## Synchronization
+
+Chezmoi allows to automatically commit and push. Add this to
+`./git/config`
+
+``` text
+[git]
+    autoCommit = true
+    autoPush = true
+```
