@@ -1,0 +1,59 @@
+priority -50
+
+snippet sec "Section" b
+# ${1:Section Name} #
+$0
+endsnippet
+
+snippet ssec "Sub Section" b
+## ${1:Section Name} ##
+$0
+endsnippet
+
+snippet sssec "SubSub Section" b
+### ${1:Section Name} ###
+$0
+endsnippet
+
+snippet par "Paragraph" b
+#### ${1:Paragraph Name} ####
+$0
+endsnippet
+
+snippet spar "Paragraph" b
+##### ${1:Paragraph Name} #####
+$0
+endsnippet
+
+snippet b "Bold"
+**${1:text}**${0}
+endsnippet
+
+snippet i "Italic"
+_${1:text}_${0}
+endsnippet
+
+snippet c "Checkbox"
+- [ ] ${0:text}
+endsnippet
+
+snippet link "Link to something"
+[${1:${VISUAL:Text}}](${3:http://${2:www.url.com}})$0
+endsnippet
+
+snippet img "Image"
+![${1:pic alt}](${2:path}${3/.+/ "/}${3:opt title}${3/.+/"/})$0
+endsnippet
+
+snippet codei "Inline Code" i
+\`$1\`$0
+endsnippet
+
+snippet codeb "Codeblock" b
+\`\`\`
+$1
+\`\`\`
+$0
+endsnippet
+
+# vim:ft=snippets:

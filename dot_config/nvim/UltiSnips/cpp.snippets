@@ -1,0 +1,130 @@
+priority -50
+
+extends c
+
+# We want to overwrite everything in parent ft.
+priority -49
+
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+snippet beginend "$1.begin(), $1.end() (beginend)"
+${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
+endsnippet
+
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`} {
+public:
+	${1/(\w+).*/$1/}(${2:arguments});
+	virtual ~${1/(\w+).*/$1/}();
+
+private:
+	${0:/* data */}
+};
+endsnippet
+
+snippet th "this->" i
+this->
+endsnippet
+
+snippet . "->" i
+->
+endsnippet
+
+snippet ns "namespace .. (namespace)"
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`} {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet readfile "read file ifsteam"
+std::string line;
+std::ifstream myfile ("example.txt");
+if (myfile.is_open()) {
+	while(getline(myfile,line)) {
+		cout << line << '\n';
+	}
+	myfile.close();
+} else {
+		cout << "Unable to open file"; 
+}
+endsnippet
+
+snippet writefile "write file ofstream"
+std::ofstream ${1:outputFile};
+$1.open(${2:"example.txt"});
+$1 << ${0:"Writing this to a file.\n"};
+$1.close();
+endsnippet
+
+snippet map "std::map (map)"
+std::map<${1:key}, ${2:value}> map$0;
+endsnippet
+
+snippet vect "std::vector (v)"
+std::vector<${1:char}> v$0;
+endsnippet
+
+snippet temp "template <typename ..> (template)"
+template <typename ${1:_InputIter}>
+endsnippet
+
+snippet todo "A Todo comment"
+// [TODO]: ${1:Description} - `!v strftime("%Y-%m-%d %I:%M%P")`
+endsnippet
+
+snippet rosi "ROS_INFO()"
+ROS_INFO("${1}");${0}
+endsnippet
+
+snippet ompsec "OpenMP sections"
+#pragma omp parallel sections
+{
+	#pragma omp section
+	{
+	}
+	#pragma omp section
+	{
+	}
+}
+endsnippet
+
+snippet mpinit "OpenMP init num thread"
+omp_set_num_threads(omp_get_num_procs());
+endsnippet
+
+snippet ompfor "OpenMP for"
+#pragma omp parallel for
+for(int i = 0; i < size; ++i) {
+	${0}
+}
+endsnippet
+
+snippet ompforor "OpenMP for ordered"
+#pragma omp parallel for ordered
+for(int i = 0; i < size; ++i) {
+	${0}
+}
+endsnippet
+
+snippet ompiter "OpenMP iterator"
+#pragma omp parallel
+{
+	for (auto i = vect.begin(); i != vect.end(); ++i) {
+		#pragma omp single nowait
+		{
+			${0}
+		}
+	}
+}
+endsnippet
+
+snippet str "std::string" b
+std::string$0
+endsnippet
+
+snippet get "std::get<>()" i
+std::get<${1:0}>(${2:tuple})$0
+endsnippet
+
+# vim:ft=snippets:
