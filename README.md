@@ -1,6 +1,6 @@
 # Dotfiles
 
-Manage dotfiles using chezmoi.
+Manage dotfiles using [chezmoi](https://www.chezmoi.io/).
 
 Minimal setup:
 
