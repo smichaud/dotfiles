@@ -1,0 +1,7 @@
+[user]
+	email = sebastien.michaud.2@gmail.com
+	name = Sebastien Michaud
+[pull]
+	rebase = false
+[core]
+	excludesfile = /home/smichaud/.gitignore_global
