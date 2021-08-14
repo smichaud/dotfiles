@@ -31,10 +31,11 @@ keys \> add it!
 
 ## Synchronization
 
-Chezmoi allows to automatically commit and push. Add this to
-`./git/config`
+Chezmoi allows to automatically commit and push.
 
-``` text
+This is the current config because of: `~/.config/chezmoi/chezmoi.toml`
+
+``` toml
 [git]
     autoCommit = true
     autoPush = true
