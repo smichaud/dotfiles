@@ -4,15 +4,17 @@ Manage dotfiles.
 
 Minimal setup:
 
-```bash
+``` bash
 pacman -Syu
 pacman -S chezmoi
-chezmoi init https://github.com/smichaud/dotfiles
+chezmoi init smichaud
+# Because Github and dotfiles name are default, this is the same as:
+# chezmoi init https://github.com/smichaud/dotfiles
 ```
 
 To be able to push changes:
 
-```bash
+``` bash
 git config --global user.name "Sebastien Michaud"
 git config --global user.name "my.email@gmail.com"
 
@@ -21,4 +23,5 @@ ssh-keygen -t rsa
 ssh-add ~/.ssh/THE_CREATED_KEY
 ```
 
-Copy the public key to Github > profile icon > setting > SSH and GPG keys > add it!
+Copy the public key to Github \> profile icon \> setting \> SSH and GPG
+keys \> add it!
