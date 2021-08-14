@@ -248,6 +248,10 @@ function gitprcreate() {
   xdg-open $pr_url
 }
 
+##### Chezmoi
+alias cm='chezmoi'
+alias cmcd='cd ~/.local/share/chezmoi'
+
 ##### Google Cloud
 alias gci='gcloud compute instances '
 alias gcs='gcloud compute ssh '
