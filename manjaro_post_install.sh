@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-vim +PlugInstall +qa
+# Check this https://github.com/junegunn/vim-plug/issues/225
+vim +PlugInstall +qall >/dev/null
 
 yay -S snapd
 sudo systemctl enable --now snapd.socket
