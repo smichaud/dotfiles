@@ -13,7 +13,7 @@ if [[ -f /usr/share/fzf/completion.zsh ]]; then
 fi
 
 export RIPGREP_CONFIG_PATH="~/.ripgreprc"
-export FZF_DEFAULT_COMMAND="rg --hidden --files --ignore-file /home/smichaud/Workspace/linux-utils/rc/.ignore"
+export FZF_DEFAULT_COMMAND="rg --hidden --files --ignore-file /home/smichaud/.ignore"
 if [[ -f ~/.secret_aliases ]]; then
     . ~/.secret_aliases
 fi
@@ -173,18 +173,9 @@ alias zshrc='nvim ~/.zshrc'
 alias zrc='nvim ~/.zshrc'
 alias vimrc='cd ~/.config/nvim/ && nvim init.vim'
 alias vrc='cd ~/.config/nvim/ && nvim init.vim'
-alias snippets='cd ~/Workspace/vim-snippets/UltiSnips/ && nvim'
+alias snippets='cd ~/.config/nvim/UltiSnips/ && nvim'
 alias codesetting='cd ~/.config/Code/User/settings.json && nvim .'
 alias i3config='nvim ~/.i3/config'
-
-##### Notes
-alias gitreminder='cat ~/Workspace/linux-utils/Notes/git.md'
-alias vimreminder='cat ~/Workspace/linux-utils/Notes/vim.md'
-alias postgrereminder='cat ~/Workspace/linux-utils/Notes/postgre.md'
-
-# pgcli (list tables with \dt)
-alias pglocal='pgcli postgres://postgres:canex@localhost:5432/sewer_inspection_local'
-alias pgdev='pgcli postgres://postgres:canex@localhost:5432/sewer_inspection_local'
 
 # Python Poetry
 alias pt='poetry '
