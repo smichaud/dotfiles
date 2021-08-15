@@ -20,7 +20,7 @@ yay -S --needed --nocleanmenu --nodiffmenu postgresql
 yay -S --needed --nocleanmenu --nodiffmenu docker
 yay -S --needed --nocleanmenu --nodiffmenu google-cloud-sdk kubectl k9s cloud-sql-proxy-bin # Setup with `gcloud init`
 
-yay -S --needed --nocleanmenu --nodiffmenu unzip
+yay -S --needed --nocleanmenu --nodiffmenu unzip lsd bottom
 yay -S --needed --nocleanmenu --nodiffmenu gnu-netcat
 yay -S --needed --nocleanmenu --nodiffmenu bitwarden-cli
 yay -S --needed --nocleanmenu --nodiffmenu ulauncher-git # Then install your extensions
