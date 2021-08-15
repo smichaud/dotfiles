@@ -107,8 +107,8 @@ mode "$mode_system" {
 #bindsym Control+Mod1+minus exec ~/.scripts/set-brighness.sh down
 #bindsym Control+Mod1+plus exec  ~/.scripts/set-brighness.sh up
 
-#bindsym XF86TouchpadToggle exec ~/scripts/touchpad-toggle.sh
-#bindsym $mod+b exec ~/scripts/bluetooth-toggle.sh
+#bindsym XF86TouchpadToggle exec ~/.scripts/touchpad-toggle.sh
+#bindsym $mod+b exec ~/.scripts/bluetooth-toggle.sh
 
 bindsym $mod+s exec flameshot gui
 bindsym $mod+Shift+s exec peek
@@ -116,11 +116,11 @@ bindsym $mod+t exec --no-startup-id teamspeak3
 bindsym $mod+Shift+t exec --no-startup-id teams
 
 exec ~/.scripts/set-monitors.sh
-bindsym $mod+w exec ~/scripts/set-workspaces.sh
+bindsym $mod+w exec ~/.scripts/set-workspaces.sh
 
 exec_always --no-startup-id sbxkb
-bindsym $mod+space exec ~/scripts/set-keyboard.sh toggle
-exec ~/scripts/set-keyboard.sh
+bindsym $mod+space exec ~/.scripts/set-keyboard.sh toggle
+exec ~/.scripts/set-keyboard.sh
 
 # Automatically Started Applications
 #exec urxvtd -q -o -f # URxvt daemon
