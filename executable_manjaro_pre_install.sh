@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-pacman -Syu
-pacman -S yay
+sudo pacman -Syu --needed --noconfirm yay
+sudo pacman -S --needed --noconfirm yay
 
-yay -S zsh
+sudo pacman -S --needed --noconfirm zsh
 chsh -s $(which zsh)
 
-pacman -S chezmoi
+pacman -S chezmoi --needed --noconfirm
 chezmoi init smichaud
