@@ -106,7 +106,6 @@ luafile ~/.config/nvim/config/lualine.lua
 source ~/.config/nvim/config/colorsheme.vim
 source ~/.config/nvim/config/tree.vim
 source ~/.config/nvim/config/which-key.vim
-source ~/.config/nvim/config/easymotion.vim
 source ~/.config/nvim/config/quickfix-reflector.vim
 source ~/.config/nvim/config/ripgrep.vim
 luafile ~/.config/nvim/config/telescope.lua
