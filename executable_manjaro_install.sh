@@ -4,18 +4,19 @@ yay -S --needed --noconfirm \
     ttf-fira-mono ttf-joypixels noto-fonts-emoji ttf-polybar-icons powerline-fonts
 
 yay -S --needed --noconfirm \
-    termite-git kitty neovim-nightly-bin python-pynvim
+    termite-git kitty neovim-git python-pynvim
 
 yay -S --needed --noconfirm \
     base-devel cmake swig graphviz
 
 yay -S --needed --noconfirm \
-    ripgrep fzf bat jq fx jello tldr++ fd trash-cli dragon-drag-and-drop lsd bottom
+    feh ripgrep fzf bat jq fx jello tldr++ fd trash-cli dragon-drag-and-drop lsd bottom
 
 yay -S --needed --noconfirm sshfs tmux
 yay -S --needed --noconfirm jre jdk
 yay -S --needed --noconfirm yarn npm nvm
 yay -S --needed --noconfirm python2 # Some f*****g npm packages need it...
+yay -S --needed --noconfirm python38
 yay -S --needed --noconfirm python-pipx
 yay -S --needed --noconfirm python-matplotlib
 yay -S --needed --noconfirm latex-mk texlive-latexextra

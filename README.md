@@ -5,11 +5,16 @@ Manage dotfiles using [chezmoi](https://www.chezmoi.io/).
 Minimal setup:
 
 ``` bash
-pacman -Syu
-pacman -S chezmoi
-chezmoi init smichaud
+# This will require a reboot
+chsh -s $(which zsh)
+
+yay -S chezmoi
+
 # Because Github and dotfiles name are default, this is the same as:
 # chezmoi init https://github.com/smichaud/dotfiles
+chezmoi init --apply smichaud
+
+sudo pacman -Syu --needed --noconfirm
 ```
 
 To be able to push changes:
