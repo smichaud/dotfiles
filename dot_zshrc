@@ -249,12 +249,12 @@ alias gcs='gcloud compute ssh '
 
 
 ##### Command replacements
-alias cat='bat'
+# alias cat='bat' 
 alias ls='lsd --group-dirs=first'
 alias du='duf'
 alias top='btm' # bottom
 # alternative to 'curl' --> curlie 
-alias cl='curlie'
+# alias cl='curlie'
 
 ##### Command shortcuts
 alias ....="cd ../.."
