@@ -98,8 +98,8 @@ nnoremap <leader>td :DBUIToggle<CR>
 " nmap <c-g> <Plug>(DBUI_JumpToForeignKey)
 
 " Easymotion
-nmap <leader>F <Plug>(easymotion-bd-w)
-nmap <leader>f m'<leader>F
+nmap <leader>F :HopPattern<CR>
+nmap <leader>f :HopWord<CR>
 " nmap <c-g> <Plug>(easymotion-bd-w)
 
 " Ripgrep / Search and replace
@@ -109,8 +109,8 @@ nnoremap <leader>? :Rg --fixed-strings
 nnoremap <leader>* :Rg<CR>
 
 " vim-commentary
-nmap <C-_> gcc
-vmap <C-_> gc
+"nmap <C-_> gcc
+"vmap <C-_> gc
 
 " Sorting
 vmap <leader>rs :sort i<CR>

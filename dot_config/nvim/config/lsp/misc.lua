@@ -40,3 +40,5 @@ require'lspconfig'.jsonls.setup {
     cmd = {"vscode-json-languageserver", "--stdio"}, -- yay install without dash
     init_options = {provideFormatter = false}
 }
+
+require"lsp_signature".setup()
