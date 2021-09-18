@@ -2,6 +2,8 @@
 "- NOTE: use `:checkhealth` to make sure everything works !!!!
 "-------------------------------------------------------------
 
+call plug#begin()
+
 """"""""Deliberation block""""""""""""""""
 Plug 'kdheepak/lazygit.nvim'
 " Plug 'tpope/vim-dotenv'
