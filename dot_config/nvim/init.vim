@@ -18,6 +18,7 @@ call plug#begin()
 Plug 'kdheepak/lazygit.nvim'
 " Plug 'tpope/vim-dotenv'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
+Plug 'gennaro-tedesco/nvim-peekup'
 """"""""""""""""""""""""""""""""""""""""""
 
 Plug '~/Workspace/vim-custom' " No need for installation (i.e. won't be copied, won't appear in PlugInstall)
@@ -43,7 +44,7 @@ Plug 'https://git.sr.ht/~novakane/kosmikoa.nvim'
 Plug 'maaslalani/nordbuddy'
 
 Plug 'liuchengxu/vim-which-key' " Display available potential shortcuts 
-Plug 'easymotion/vim-easymotion' " Acejump
+Plug 'phaazon/hop.nvim' " Acejump
 Plug 'jacquesbh/vim-showmarks' " In the gutter
 
 Plug 'mhinz/vim-signify' " VCS (git) sign in gutter + navigate/show hunk
@@ -55,7 +56,8 @@ Plug 'tpope/vim-repeat' " Enable repeat with . for surround actions
 Plug 'jiangmiao/auto-pairs' " replaced by coc-pairs
 Plug 'Valloric/MatchTagAlways'
 Plug 'AndrewRadev/tagalong.vim'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'b3nj5m1n/kommentary'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -70,6 +72,7 @@ Plug 'neovim/nvim-lspconfig' " you must install language server independently (e
 Plug 'glepnir/lspsaga.nvim' " LSP looks good (e.g. menu)
 Plug 'hrsh7th/nvim-compe' " LSP completion
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Syntax highlight, require :TSInstall python, typescript, tsx, json... 
 Plug 'SirVer/ultisnips'
 Plug 'onsails/lspkind-nvim' " Pictogram in completion menu
@@ -117,6 +120,7 @@ luafile ~/.config/nvim/config/lsp/misc.lua
 luafile ~/.config/nvim/config/lsp/python.lua
 luafile ~/.config/nvim/config/lsp/typescript.lua
 luafile ~/.config/nvim/config/lsp/lua.lua
+luafile ~/.config/nvim/config/lsp/signature.lua
 
 luafile ~/.config/nvim/config/compe.lua
 source ~/.config/nvim/config/ultisnip.vim
