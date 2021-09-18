@@ -2,12 +2,6 @@
 "- NOTE: use `:checkhealth` to make sure everything works !!!!
 "-------------------------------------------------------------
 
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-  \| endif
-call plug#begin()
-
 """"""""Deliberation block""""""""""""""""
 Plug 'kdheepak/lazygit.nvim'
 " Plug 'tpope/vim-dotenv'
