@@ -47,4 +47,5 @@ yay -S --needed --noconfirm \
     vscode-html-languageserver \
     vscode-json-languageserver \
     pyright \
+    typescript-language-server \
     lua-language-server

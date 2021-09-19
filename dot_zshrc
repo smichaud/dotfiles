@@ -42,6 +42,7 @@ export LD_LIBRARY_PATH="/opt/cuda/lib64/:${LD_LIBRARY_PATH}"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# source /usr/share/nvm/init-nvm.sh
 
 # eval "$(ssh-agent -s)" &> /dev/null
 # ls ~/.ssh | egrep -v '\.pub|\.pem|known_hosts|authorized_keys' | xargs -I@ ssh-add ~/.ssh/@ 2>/dev/null
