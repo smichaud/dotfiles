@@ -269,6 +269,7 @@ alias la='ls -lAh '
 alias tree='tree --dirsfirst '
 alias yayu='yay -Syu --devel'
 alias yayr='yay -R'
+alias yaysearchinstalled='yay -Qqe | grep'
 
 # Search yay with fzf
 yays() {
