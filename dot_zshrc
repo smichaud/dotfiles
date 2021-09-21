@@ -310,6 +310,8 @@ alias ddb='cd ~/Workspace/pipe-inspection/tools/dashdev/backend'
 alias ddf='cd ~/Workspace/pipe-inspection/tools/dashdev/frontend'
 alias dda='cd ~/Workspace/pipe-inspection/tools/dashdev/azure'
 
+alias nord='cd ~/Workspace/nordikeau/'
+
 alias xiok8s='cd ~/Workspace/k8s-stuff'
 
 alias xio='cd ~/Workspace/pipe-inspection'
