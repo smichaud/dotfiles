@@ -22,7 +22,7 @@ yay -S --needed --noconfirm python-matplotlib
 yay -S --needed --noconfirm latex-mk texlive-latexextra
 
 yay -S --needed --noconfirm postgresql
-yay -S --needed --noconfirm docker
+yay -S --needed --noconfirm docker docker-compose
 yay -S --needed --noconfirm \
     google-cloud-sdk kubectl k9s cloud-sql-proxy-bin unzip yay gnu-netcat geckodriver
 yay -S --needed --noconfirm bitwarden-cli
