@@ -135,8 +135,8 @@ exec --no-startup-id docker start mongo_local_server
 exec --no-startup-id docker start pgadmin
 exec --no-startup-id docker start canex-rabbit
 exec --no-startup-id docker start some-redis
-exec cloud_sql_proxy -instances=xpectio-dev-staging:us-east4:sewer-inspection-dev-staging-13=tcp:15432
-exec cloud_sql_proxy -instances=xpectio-prod:us-east4:sewer-prod-13=tcp:25432
+exec cloud_sql_proxy -instances=xpectio-dev-staging:us-east4:sewer-inspection-dev-staging-13=tcp:5433
+exec cloud_sql_proxy -instances=xpectio-prod:us-east4:sewer-prod-13=tcp:5434
 
 exec --no-startup sudo ln -s /mnt/ubuntu/mnt/data /mnt
 
