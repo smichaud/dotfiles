@@ -135,8 +135,9 @@ exec --no-startup-id docker start mongo_local_server
 exec --no-startup-id docker start pgadmin
 exec --no-startup-id docker start canex-rabbit
 exec --no-startup-id docker start some-redis
-exec cloud_sql_proxy -instances=xpectio-dev-staging:us-east4:sewer-inspection-dev-staging-13=tcp:5433 &
-exec cloud_sql_proxy -instances=xpectio-prod:us-east4:sewer-prod-13=tcp:5434 &
+# Sleep to leave some time for the wireless connect before executing the proxy
+exec sleep 10 && cloud_sql_proxy -instances=xpectio-dev-staging:us-east4:sewer-inspection-dev-staging-13=tcp:5433 > ~/Desktop/cloud_proxy_dev.txt 2>&1 &
+exec sleep 10 && cloud_sql_proxy -instances=xpectio-prod:us-east4:sewer-prod-13=tcp:5434  > ~/Desktop/cloud_proxy_prod.txt 2>&1 &
 
 exec --no-startup sudo ln -s /mnt/ubuntu/mnt/data /mnt
 
