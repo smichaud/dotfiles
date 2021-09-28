@@ -32,6 +32,9 @@ docker run -p 6379:6379 --name some-redis -d redis
 sudo -iu postgres initdb -D /var/lib/postgres/data
 systemctl enable --now postgresql
 
+xdg-mime default google-chrome.desktop 'x-scheme-handler/http'
+xdg-mime default google-chrome.desktop 'x-scheme-handler/https'
+
 mkdir ~/MongoData
 mkdir ~/Workspace
 mkdir ~/Data
