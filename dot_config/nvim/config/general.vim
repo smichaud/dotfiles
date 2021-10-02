@@ -98,6 +98,7 @@ autocmd BufNewFile,BufRead dot_pythonrc  set syntax=python
 autocmd BufNewFile,BufRead dot_tmux.conf  set syntax=tmux
 autocmd BufNewFile,BufRead dot_gitconfig  set syntax=gitconfig
 autocmd BufNewFile,BufRead dot_Xresources  set syntax=xdefaults
+autocmd BufNewFile,BufRead ~/.local/share/chezmoi/dot_i3/config set syntax=i3config
 
 " Update files automatically when changed externally
 set autoread

@@ -69,7 +69,7 @@ Plug 'SirVer/ultisnips'
 Plug 'onsails/lspkind-nvim' " Pictogram in completion menu
 Plug 'mattn/efm-langserver' " For formatting
 
-
+Plug 'mboughaba/i3config.vim' " i3 config syntax highlight
 Plug 'RRethy/vim-illuminate' " highlight symbol under cursor
 Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'ap/vim-css-color'
