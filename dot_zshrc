@@ -289,6 +289,7 @@ alias count='ls | wc -l'
 alias fopen='xdg-open '
 alias rsync='rsync -ah --info=progress2 '
 alias trash='trash-put '
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage'
 # X clipboard manipulations
 alias clipdset='xclip -selection clipboard ' # echo "Text" | clipset
 alias clipget='xclip -selection clipboard -o '
