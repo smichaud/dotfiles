@@ -91,6 +91,13 @@ autocmd QuickFixCmdPost *grep* botright copen
 
 " autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.launch  set syntax=xml
+autocmd BufNewFile,BufRead dot_zshrc  set syntax=zsh
+autocmd BufNewFile,BufRead dot_bashrc  set syntax=sh
+autocmd BufNewFile,BufRead dot_profile  set syntax=sh
+autocmd BufNewFile,BufRead dot_pythonrc  set syntax=python
+autocmd BufNewFile,BufRead dot_tmux.conf  set syntax=tmux
+autocmd BufNewFile,BufRead dot_gitconfig  set syntax=gitconfig
+autocmd BufNewFile,BufRead dot_Xresources  set syntax=xdefaults
 
 " Update files automatically when changed externally
 set autoread
