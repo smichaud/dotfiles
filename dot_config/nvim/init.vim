@@ -95,6 +95,7 @@ source ~/.config/nvim/config/neoterm.vim
 luafile ~/.config/nvim/config/bufferline.lua
 luafile ~/.config/nvim/config/lualine.lua
 source ~/.config/nvim/config/colorsheme.vim
+source ~/.config/nvim/config/hop.vim
 luafile ~/.config/nvim/config/tree.lua
 source ~/.config/nvim/config/which-key.vim
 source ~/.config/nvim/config/quickfix-reflector.vim
@@ -125,6 +126,7 @@ source ~/.config/nvim/config/firenvim.vim
 source ~/.config/nvim/config/commands.vim
 luafile ~/.config/nvim/config/keymap.lua
 source ~/.config/nvim/config/keymap.vim
+
 
 " Exploring lua
 command! Scratch lua require'tools'.makeScratch()
