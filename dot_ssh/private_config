@@ -1,0 +1,4 @@
+Host ssh.dev.azure.com
+    HostkeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    # KexAlgorithm +ssh-rsa
