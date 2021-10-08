@@ -1,0 +1,2 @@
+Host ssh.dev.azure.com
+	KexAlgorithms +diffie-hellman-group14-sha1,diffie-hellman-group14-sha1,ssh-rsa

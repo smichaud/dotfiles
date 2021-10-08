@@ -314,7 +314,11 @@ alias docs='cd ~/Workspace/docs'
 
 alias nord='cd ~/Workspace/nordikeau/'
 alias nordb='cd ~/Workspace/nordikeau/backend'
+alias nordbs='cd ~/Workspace/nordikeau/backend && yarn start'
+alias nordbss='cd ~/Workspace/nordikeau/backend && yarn install && yarn migration:up && yarn start'
 alias nordf='cd ~/Workspace/nordikeau/webapp'
+alias nordfs='cd ~/Workspace/nordikeau/webapp && yarn start'
+alias nordfss='cd ~/Workspace/nordikeau/webapp && yarn install && yarn start'
 
 alias xiok8s='cd ~/Workspace/k8s-stuff'
 
