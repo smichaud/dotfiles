@@ -127,7 +127,6 @@ source ~/.config/nvim/config/commands.vim
 luafile ~/.config/nvim/config/keymap.lua
 source ~/.config/nvim/config/keymap.vim
 
-
 " Exploring lua
 command! Scratch lua require'tools'.makeScratch()
 
