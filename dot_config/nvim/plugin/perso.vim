@@ -1,3 +1,15 @@
+fun! ToggleCase()
+    " To reload the plugin during development
+    lua for k in pairs(package.loaded) do if k:match("perso") then package.loaded[k] = nil end end
+    lua require("perso").toggle_case()
+endfun
+
+fun! GoToTest()
+    " To reload the plugin during development
+    lua for k in pairs(package.loaded) do if k:match("perso") then package.loaded[k] = nil end end
+    lua require("perso").go_to_test()
+endfun
+
 fun! Proto()
     " To reload the plugin during development
     lua for k in pairs(package.loaded) do if k:match("perso") then package.loaded[k] = nil end end
@@ -7,16 +19,8 @@ endfun
 " Template if you want some auto command
 augroup Proto
     autocmd!
-    autocmd VimResized * :lua require("perso").on_resize()
+    " autocmd VimResized * :lua require("perso").on_resize()
 augroup END
-
-fun! ToggleCase()
-    " To reload the plugin during development
-    lua for k in pairs(package.loaded) do if k:match("perso") then package.loaded[k] = nil end end
-    lua require("perso").toggle_case()
-endfun
-
-
 """ THE CLEAN WAY """
 " if exists('g:loaded_perso') | finish | endif
 

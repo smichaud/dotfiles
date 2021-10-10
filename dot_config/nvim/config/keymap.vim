@@ -42,8 +42,8 @@ nnoremap <leader>xtx :TestSuite<CR>
 nnoremap <leader>xtf :TestFile<CR>
 nnoremap <leader>xtt :TestNearest<CR>
 nnoremap <leader>xtn :TestNearest<CR>
-" Vim-projectionist
-nnoremap <leader>gt :A<CR> 
+" Vim-projectionist ... commented doing my own
+" nnoremap <leader>gt :A<CR> 
 " Ultest
 " nnoremap <leader>tt :UltestSummary<CR>
 " nnoremap <leader>xtn :UltestNearest<CR>
@@ -82,7 +82,6 @@ nnoremap <leader>tu :UndotreeToggle<CR>
 :tnoremap <C-n> <C-\><C-n>
 :tnoremap <M-c> <C-\><C-n>:Ttoggle<CR>
 nnoremap <M-c> :Ttoggle<CR>
-nnoremap <leader>tc :Ttoggle<CR>
 
 " NvimTree
 nnoremap <leader>te :NvimTreeToggle<CR>

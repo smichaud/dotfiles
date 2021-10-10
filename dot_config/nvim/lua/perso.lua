@@ -5,6 +5,14 @@
 -- local sys_output = vim.fn.systemlist('find .')
 -- for k, v in pairs(sys_output) do print(k, v) end
 -- Could create test file if does not exist
+local function proto()
+    print("WIP")
+end
+
+local function toggle_case()
+    print("ToggleCase")
+end
+
 local function get_config()
     local working_dir = vim.fn.getcwd()
     local escaped_working_dir = string.gsub(working_dir, "/", "%%")
@@ -34,8 +42,9 @@ local function get_config()
     }
 end
 
-local function proto()
-    local config = get_config()
+local function go_to_test()
+    print("GoToTest")
+    --[[ local config = get_config()
 
     local current_filepath = vim.fn.expand("%")
 
@@ -55,11 +64,7 @@ local function proto()
             local test_filepath = basepath .. "test/" .. test_filename
             -- vim.api.nvim_command('edit ' .. test_filepath)
         end
-    end
-end
-
-local function go_to_test_toggle()
-    print("TODO")
+    end ]]
 end
 
 local function create_floating_window()
@@ -91,7 +96,8 @@ end
 
 return {
     proto = proto,
-    go_to_test_toggle = go_to_test_toggle,
+    toggle_case = toggle_case,
+    go_to_test = go_to_test,
     create_floating_window = create_floating_window,
     on_resize = on_resize
 }
