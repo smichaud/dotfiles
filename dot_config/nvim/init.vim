@@ -128,7 +128,6 @@ luafile ~/.config/nvim/config/keymap.lua
 source ~/.config/nvim/config/keymap.vim
 
 " Exploring lua
-command! Scratch lua require'tools'.makeScratch()
 
 highlight SignColumn ctermbg=none " Remove grey background for sign column
 

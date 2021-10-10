@@ -1,4 +1,5 @@
 -- Hardcoded first
+-- Create if not exist
 -- Could ask pattern and save it in some app_setting file
 -- Could try to find pattern based on files and save it
 -- Could create test file if does not exist
