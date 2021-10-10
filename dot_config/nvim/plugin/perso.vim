@@ -4,10 +4,18 @@ fun! Proto()
     lua require("perso").proto()
 endfun
 
+" Template if you want some auto command
 augroup Proto
     autocmd!
     autocmd VimResized * :lua require("perso").on_resize()
 augroup END
+
+fun! ToggleCase()
+    " To reload the plugin during development
+    lua for k in pairs(package.loaded) do if k:match("perso") then package.loaded[k] = nil end end
+    lua require("perso").toggle_case()
+endfun
+
 
 """ THE CLEAN WAY """
 " if exists('g:loaded_perso') | finish | endif

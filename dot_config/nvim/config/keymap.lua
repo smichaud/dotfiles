@@ -24,3 +24,4 @@ vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
 
 -- Perso
 vim.api.nvim_set_keymap("n", "<leader>u", "call Proto()", {})
+vim.api.nvim_set_keymap("n", "<leader>U", "call ToggleCase()", {})

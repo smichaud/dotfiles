@@ -2,28 +2,60 @@
 -- Create if not exist
 -- Could ask pattern and save it in some app_setting file
 -- Could try to find pattern based on files and save it
+-- local sys_output = vim.fn.systemlist('find .')
+-- for k, v in pairs(sys_output) do print(k, v) end
 -- Could create test file if does not exist
-local function proto()
-    local current_filepath = vim.fn.expand("%")
+local function get_config()
+    local working_dir = vim.fn.getcwd()
+    local escaped_working_dir = string.gsub(working_dir, "/", "%%")
+    local config_filepath = "$HOME/.config/nvim/gototest/" .. escaped_working_dir
 
-    -- Find a way to get a table instead?
-    local test_pattern = "(.*/)test/(.*)%.test(%.ts)$"
-    local root_path, filename, extension = string.match(current_filepath, test_pattern)
-
-    if root_path then
-        print("TEST FILE")
-        local src_filepath = root_path .. filename .. extension
-        vim.api.nvim_command('edit ' .. src_filepath)
+    if not require("utils").file_exists(config_filepath) then
+        local answer = vim.fn.input("No configuration file found, create one? y/n")
+        if answer == "y" then
+            os.execute("mkdir -p " .. "$HOME/.config/nvim/gototest/")
+            local file_handle = io.open(config_filepath, "w")
+            for key, value in pairs(config) do
+                print(key, value)
+                file_handle:write(key .. " = " .. tostring(value) .. "\n")
+            end
+            file_handle:close()
+        end
     else
-        print("SRC FILE")
-        local basepath, filename = string.match(current_filepath, "(.*/)(.*%.ts)$")
-        local test_filename = string.gsub(filename, ".ts", ".test.ts")
-        local test_filepath = basepath .. "test/" .. test_filename
-        vim.api.nvim_command('edit ' .. test_filepath)
+        print("Loading config")
     end
 
-    -- local sys_output = vim.fn.systemlist('find .')
-    -- for k, v in pairs(sys_output) do print(k, v) end
+    return {
+        project_root = vim.fn.getcwd(),
+        test_dir = "test",
+        file_test_marker = "%.test",
+        is_test_marker_suffix = true,
+        extension_pattern = "%.tsx?"
+    }
+end
+
+local function proto()
+    local config = get_config()
+
+    local current_filepath = vim.fn.expand("%")
+
+    local test_file_pattern = "(.*/)" .. config.test_dir .. "/(.*)" .. config.file_test_marker .. "(" ..
+                                  config.extension_pattern .. ")$"
+    local root_path, filename, extension = string.match(current_filepath, test_file_pattern)
+    local is_test_file = root_path and filename and extension
+
+    if is_test_file then
+        local src_filepath = root_path .. filename .. extension
+        -- vim.api.nvim_command('edit ' .. src_filepath)
+    else
+        local basepath, src_filename = string.match(current_filepath, "(.*/)(.*%.ts)$")
+        local is_valid_src_file = basepath and src_filename
+        if is_valid_src_file then
+            local test_filename = string.gsub(src_filename, ".ts", ".test.ts")
+            local test_filepath = basepath .. "test/" .. test_filename
+            -- vim.api.nvim_command('edit ' .. test_filepath)
+        end
+    end
 end
 
 local function go_to_test_toggle()

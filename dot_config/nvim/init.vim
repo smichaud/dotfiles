@@ -127,8 +127,6 @@ source ~/.config/nvim/config/commands.vim
 luafile ~/.config/nvim/config/keymap.lua
 source ~/.config/nvim/config/keymap.vim
 
-" Exploring lua
-
 highlight SignColumn ctermbg=none " Remove grey background for sign column
 
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path %
