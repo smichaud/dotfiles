@@ -23,6 +23,6 @@ vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default<C-c>", {}
 vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
 
 -- Perso
--- vim.api.nvim_set_keymap("n", "<leader>tc", "call ToggleCase()<CR>", {})
-vim.api.nvim_set_keymap("n", "<leader>gt", "call GoToTest()<CR>", {})
--- vim.api.nvim_set_keymap("n", "<leader>u", "call Proto()<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>tc", ":call ToggleCase()<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>gt", ":call GoToTest()<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>w", ":call Proto()<CR>", {})

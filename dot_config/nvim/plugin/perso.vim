@@ -21,6 +21,8 @@ augroup Proto
     autocmd!
     " autocmd VimResized * :lua require("perso").on_resize()
 augroup END
+
+
 """ THE CLEAN WAY """
 " if exists('g:loaded_perso') | finish | endif
 
