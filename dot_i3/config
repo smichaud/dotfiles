@@ -120,7 +120,8 @@ bindsym $mod+w exec ~/.scripts/set-workspaces.sh
 
 exec_always --no-startup-id sbxkb
 bindsym $mod+space exec ~/.scripts/set-keyboard.sh toggle
-exec ~/.scripts/set-keyboard.sh
+bindsym $mod+z exec ~/.scripts/set-keyboard.sh reset
+#exec ~/.scripts/set-keyboard.sh
 
 # Automatically Started Applications
 #exec urxvtd -q -o -f # URxvt daemon

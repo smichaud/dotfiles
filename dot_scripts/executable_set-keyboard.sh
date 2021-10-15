@@ -2,7 +2,10 @@
 
 # You can use the xev command to get the key name
 
-if [ "$1" == "toggle" ]; then
+if [ "$1" == "reset" ]; then
+    setxkbmap us -option
+    notify-send --icon="~/Pictures/flyingphoque.png" "Keyboard" "Reset (for planck)"
+elif [ "$1" == "toggle" ]; then
     current_keyboard="$(setxkbmap -query | grep layout | tr -d ' ' | cut -d: -f 2)"
     if [ "$current_keyboard" == "us" ]; then
         setxkbmap ca fr
@@ -11,14 +14,13 @@ if [ "$1" == "toggle" ]; then
         setxkbmap us
         notify-send --icon="~/Pictures/flag-usa.png" "Keyboard" "Set to 'us'"
     fi
+    setxkbmap -option caps:swapescape
+    setxkbmap -option compose:menu
+    setxkbmap -option altwin:swap_lalt_lwin
+    xmodmap -e "keycode 108 = Alt_R"
+    numlockx on
+    xset r rate 200
 fi
-
-setxkbmap -option caps:swapescape
-setxkbmap -option compose:menu
-setxkbmap -option altwin:swap_lalt_lwin
-xmodmap -e "keycode 108 = Alt_R"
-numlockx on
-xset r rate 200
 
 # Reduce razer mouse speed:
 # mouse_xinput_id="$(xinput --list | grep -m1 "Razer Razer DeathAdder Elite" | awk '{print $7}' | sed 's/id=//')"
