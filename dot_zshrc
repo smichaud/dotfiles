@@ -320,6 +320,8 @@ alias nordf='cd ~/Workspace/nordikeau/webapp'
 alias nordfs='cd ~/Workspace/nordikeau/webapp && yarn start'
 alias nordfss='cd ~/Workspace/nordikeau/webapp && yarn install && yarn start'
 
+alias forms='cd ~/Workspace/forms-solution'
+
 alias xiok8s='cd ~/Workspace/k8s-stuff'
 
 alias xio='cd ~/Workspace/pipe-inspection'
