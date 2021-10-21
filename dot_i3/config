@@ -119,9 +119,10 @@ exec ~/.scripts/set-monitors.sh
 bindsym $mod+w exec ~/.scripts/set-workspaces.sh
 
 exec_always --no-startup-id sbxkb
-bindsym $mod+space exec ~/.scripts/set-keyboard.sh toggle
-bindsym $mod+z exec ~/.scripts/set-keyboard.sh reset
-#exec ~/.scripts/set-keyboard.sh
+bindsym $mod+shift+z exec ~/.scripts/set-keyboard.sh planck_us
+bindsym $mod+shift+x exec ~/.scripts/set-keyboard.sh planck_fr
+bindsym $mod+z exec ~/.scripts/set-keyboard.sh staggered_us
+bindsym $mod+x exec ~/.scripts/set-keyboard.sh staggered_fr 
 
 # Automatically Started Applications
 #exec urxvtd -q -o -f # URxvt daemon
