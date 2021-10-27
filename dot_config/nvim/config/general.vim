@@ -91,6 +91,7 @@ autocmd QuickFixCmdPost *grep* botright copen
 
 " autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.launch  set syntax=xml
+autocmd BufNewFile,BufRead .prettierrc  set syntax=json
 autocmd BufNewFile,BufRead dot_zshrc  set syntax=zsh
 autocmd BufNewFile,BufRead dot_bashrc  set syntax=sh
 autocmd BufNewFile,BufRead dot_profile  set syntax=sh
