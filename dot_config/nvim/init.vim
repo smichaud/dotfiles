@@ -46,8 +46,8 @@ Plug 'tpope/vim-repeat' " Enable repeat with . for surround actions
 Plug 'jiangmiao/auto-pairs' " replaced by coc-pairs
 Plug 'Valloric/MatchTagAlways'
 Plug 'AndrewRadev/tagalong.vim'
-" Plug 'tpope/vim-commentary'
-Plug 'b3nj5m1n/kommentary'
+Plug 'tpope/vim-commentary'
+" Plug 'b3nj5m1n/kommentary'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'

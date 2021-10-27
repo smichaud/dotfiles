@@ -18,9 +18,9 @@ vim.api.nvim_set_keymap("v", "<leader>xx", ":SnipRun<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>xx", ":SnipRun<CR>", {})
 
 -- Kommentary
-vim.g.kommentary_create_default_mappings = false
-vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default<C-c>", {})
-vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
+-- vim.g.kommentary_create_default_mappings = false
+-- vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default<C-c>", {})
+-- vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
 
 -- Perso
 vim.api.nvim_set_keymap("n", "<leader>tc", ":call ToggleCase()<CR>", {})

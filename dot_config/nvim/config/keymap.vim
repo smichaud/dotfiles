@@ -110,8 +110,8 @@ nnoremap <leader>? :Rg --fixed-strings
 nnoremap <leader>* :Rg<CR>
 
 " vim-commentary
-"nmap <C-_> gcc
-"vmap <C-_> gc
+nmap <C-_> gcc
+vmap <C-_> gc
 
 " Sorting
 vmap <leader>rs :sort i<CR>
