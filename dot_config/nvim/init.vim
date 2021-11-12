@@ -21,7 +21,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kassio/neoterm'
 Plug 'mbbill/undotree'
 
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'moll/vim-bbye' " Delete buffer without closing windows (leader+q)
 

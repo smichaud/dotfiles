@@ -355,6 +355,7 @@ alias xioschemas='cd ~/Workspace/pipe-inspection/xpectio_schemas'
 
 alias xiotools='cd ~/Workspace/pipe-inspection/tools'
 alias xioservices='cd ~/Workspace/pipe-inspection/services'
+alias xiopro='cd ~/Workspace/pipe-inspection/services/profiler/'
 alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
 alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions'
 alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
