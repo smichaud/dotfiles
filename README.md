@@ -45,3 +45,8 @@ This is the current config because of: `~/.config/chezmoi/chezmoi.toml`
     autoCommit = true
     autoPush = true
 ```
+
+## System76 Gazelle
+
+Kernel: The only kernel not causing problem on manjaro is: 5.12.19-1
+Sound: Sound stop working once, used this to fix: `sudo alsactl init`
