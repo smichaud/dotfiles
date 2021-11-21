@@ -85,7 +85,7 @@ nnoremap <M-c> :Ttoggle<CR>
 
 " NvimTree
 nnoremap <leader>te :NvimTreeToggle<CR>
-nnoremap <leader>gf :NvimTreeFindFile<CR>
+nnoremap <leader>ge :NvimTreeFindFile<CR>
 
 
 " Ultisnip
