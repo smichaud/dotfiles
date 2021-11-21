@@ -361,9 +361,9 @@ alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions
 alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
 alias xioreport='cd ~/Workspace/pipe-inspection/services/report_generation'
 
-alias xiodd='cd ~/Workspace/pipe-inspection/tools/dashdev'
-alias xioddf='cd ~/Workspace/pipe-inspection/tools/dashdev/frontend'
-alias xioddb='cd ~/Workspace/pipe-inspection/tools/dashdev/backend'
+alias xiodd='cd ~/Workspace/pipe-inspection/dashdev'
+alias xioddf='cd ~/Workspace/pipe-inspection/dashdev/frontend'
+alias xioddb='cd ~/Workspace/pipe-inspection/dashdev/backend'
 
 alias xiofrontend='cd ~/Workspace/pipe-inspection/frontend/'
 alias xiojsclient='cd ~/Workspace/pipe-inspection/frontend/libs/client/'
