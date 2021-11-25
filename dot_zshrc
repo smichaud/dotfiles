@@ -312,6 +312,9 @@ alias expf='cd ~/Workspace/exp/frontend/'
 alias ddb='cd ~/Workspace/pipe-inspection/tools/dashdev/backend'
 alias ddf='cd ~/Workspace/pipe-inspection/tools/dashdev/frontend'
 alias dda='cd ~/Workspace/pipe-inspection/tools/dashdev/azure'
+alias xiodd='cd ~/Workspace/pipe-inspection/dashdev'
+alias xioddf='cd ~/Workspace/pipe-inspection/dashdev/frontend'
+alias xioddb='cd ~/Workspace/pipe-inspection/dashdev/backend'
 
 alias docs='cd ~/Workspace/docs'
 
@@ -360,10 +363,6 @@ alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
 alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions'
 alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
 alias xioreport='cd ~/Workspace/pipe-inspection/services/report_generation'
-
-alias xiodd='cd ~/Workspace/pipe-inspection/dashdev'
-alias xioddf='cd ~/Workspace/pipe-inspection/dashdev/frontend'
-alias xioddb='cd ~/Workspace/pipe-inspection/dashdev/backend'
 
 alias xiofrontend='cd ~/Workspace/pipe-inspection/frontend/'
 alias xiojsclient='cd ~/Workspace/pipe-inspection/frontend/libs/client/'

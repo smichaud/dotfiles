@@ -6,7 +6,7 @@ extends javascript
 priority -49
 
 
-snippet tsx "react component" b
+snippet component "react component" b
 import React from "react";
 
 interface Props {
@@ -147,8 +147,10 @@ const [${1:var}, set${1/\w+/\u$0/g}] = useState<${2:type}>(${3:defaultValue});${
 endsnippet
 
 snippet testfile "Jest describe" b
+import { render, screen, waitFor } from "@testing-library/react";
+
 jest.mock("../toMock");
-describe("$1", () => {
+describe("${1:}", () => {
 	it("$2", () => {
 		const value = false;
 		expect(value).toBeFalsy();$0
