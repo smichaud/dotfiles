@@ -126,6 +126,7 @@ bindsym $mod+x exec ~/.scripts/set-keyboard.sh staggered_fr
 
 # Automatically Started Applications
 #exec urxvtd -q -o -f # URxvt daemon
+exec --no-startup-id (cd ~/.local/share/chezmoi && git pull)
 exec --no-startup-id nm-applet # Network manager icon
 exec --no-startup-id blueman-applet # Bluetooth icon
 exec --no-startup-id pamac-tray
@@ -142,6 +143,7 @@ exec sleep 10 && cloud_sql_proxy -instances=xpectio-dev-staging:us-east4:sewer-i
 exec sleep 10 && cloud_sql_proxy -instances=xpectio-prod:us-east4:sewer-prod-13=tcp:5434 &
 
 exec --no-startup sudo ln -s /mnt/ubuntu/mnt/data /mnt
+
 
 #########################################################
 # End seb part
