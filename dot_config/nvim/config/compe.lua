@@ -67,9 +67,3 @@ _G.s_tab_complete = function()
     end
 end
 
-vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<C-k>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<Down>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<Up>", "v:lua.s_tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("i", "<CR>", "compe#complete()", {expr = true, silent = true})
-vim.api.nvim_set_keymap("i", "<CR>", [[compe#confirm("<CR>")]], {expr = true, silent = true})

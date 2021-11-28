@@ -26,3 +26,11 @@ vim.api.nvim_set_keymap("n", "<leader>xx", ":SnipRun<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>tc", ":call ToggleCase()<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>gt", ":call GoToTest()<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>w", ":call Proto()<CR>", {})
+
+-- Compe
+vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<C-k>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<Down>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<Up>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<CR>", "compe#complete()", {expr = true, silent = true})
+vim.api.nvim_set_keymap("i", "<CR>", [[compe#confirm("<CR>")]], {expr = true, silent = true})
