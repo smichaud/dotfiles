@@ -357,6 +357,8 @@ alias xiopyclient='cd ~/Workspace/pipe-inspection/services/api_client'
 alias xioschemas='cd ~/Workspace/pipe-inspection/xpectio_schemas'
 
 alias xiotools='cd ~/Workspace/pipe-inspection/tools'
+alias xiochangelog='cd ~/Workspace/pipe-inspection/tools/changelog'
+
 alias xioservices='cd ~/Workspace/pipe-inspection/services'
 alias xiopro='cd ~/Workspace/pipe-inspection/services/profiler/'
 alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
