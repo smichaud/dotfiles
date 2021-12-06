@@ -71,7 +71,7 @@ nnoremap <leader>pgc :lua require('telescope.builtin').git_commits()<CR>
 nnoremap <leader>pgs :lua require('telescope.builtin').git_commits()<CR>
 nnoremap <leader>pgz :lua require('telescope.builtin').git_stash()<CR>
 nnoremap <leader>pc :lua require("telescope.builtin").find_files({search_dirs = {"~/.local/share/chezmoi"}, hidden = true})<CR>
-nnoremap <leader>ps :lua require("telescope.builtin").find_files({search_dirs = {"~/.config/nvim/UltiSnips/"}, hidden = true})<CR>
+nnoremap <leader>ps :lua require("telescope.builtin").find_files({search_dirs = {"~/.local/share/chezmoi/dot_config/nvim/UltiSnips/"}, hidden = true})<CR>
 
 " Rnvimr (ranger)
 nnoremap <leader>or :RnvimrToggle<CR>
