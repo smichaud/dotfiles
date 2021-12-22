@@ -210,7 +210,7 @@ alias gita='git add '
 
 alias gitc='git commit '
 alias gitcm='git commit -m '
-alias gitcam='git commit -am'
+alias gitcam='git commit -am "'
 
 alias gitr='git rm '
 alias gitfa='git fetch --all '

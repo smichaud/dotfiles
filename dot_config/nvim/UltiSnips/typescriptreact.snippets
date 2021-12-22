@@ -2,3 +2,16 @@ priority -50
 
 extends typescript
 
+snippet component "react component" b
+import React from "react";
+
+interface Props {
+    propName?: string;
+}
+
+export function ComponentName({ propName }: Props) {
+    return (<div></div>)
+}
+endsnippet
+
+

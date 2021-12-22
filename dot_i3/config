@@ -141,6 +141,7 @@ exec --no-startup-id docker start some-redis
 # Sleep to leave some time for the wireless connect before executing the proxy
 exec sleep 10 && cloud_sql_proxy -instances=xpectio-dev-staging:us-east4:sewer-inspection-dev-staging-13=tcp:5433 &
 exec sleep 10 && cloud_sql_proxy -instances=xpectio-prod:us-east4:sewer-prod-13=tcp:5434 &
+exec sleep 10 && cloud_sql_proxy -instances=nordikeau:northamerica-northeast1:nordicite-db-instance-postgres-dev=tcp:5435 &
 
 exec --no-startup sudo ln -s /mnt/ubuntu/mnt/data /mnt
 
