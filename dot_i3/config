@@ -115,6 +115,7 @@ bindsym $mod+s exec flameshot gui
 bindsym $mod+Shift+s exec peek
 bindsym $mod+t exec --no-startup-id teamspeak3
 bindsym $mod+Shift+t exec --no-startup-id teams
+bindsym $mod+c exec --no-startup-id google-chrome-stable
 
 exec ~/.scripts/set-monitors.sh
 bindsym $mod+w exec ~/.scripts/set-workspaces.sh

@@ -16,7 +16,7 @@ yay -S --needed --noconfirm sshfs tmux
 yay -S --needed --noconfirm jre jdk
 yay -S --needed --noconfirm yarn npm nvm prettier
 yay -S --needed --noconfirm python2 # Some f*****g npm packages need it...
-yay -S --needed --noconfirm python38
+yay -S --needed --noconfirm python38 python39
 yay -S --needed --noconfirm python-pipx
 yay -S --needed --noconfirm python-matplotlib
 yay -S --needed --noconfirm latex-mk texlive-latexextra
