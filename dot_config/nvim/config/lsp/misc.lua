@@ -4,17 +4,27 @@
 -- Refer to:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#html
 -----------------------------------------------------------------
+
+-- Use whereever you want signatures
+local function on_attach(client)
+    require "lsp_signature".on_attach()
+end
+
 -- yay -S bash-language-server
-require('lspconfig').bashls.setup {}
+require('lspconfig').bashls.setup { }
 
 -- yay -S dockerfile-language-server
-require'lspconfig'.dockerls.setup {}
+require'lspconfig'.dockerls.setup { }
 
 -- yay -S rust-analyzer
-require'lspconfig'.rust_analyzer.setup {}
+require'lspconfig'.rust_analyzer.setup {
+    on_attach = on_attach,
+}
 
 -- yay -S vim-language-server
-require'lspconfig'.vimls.setup {}
+require'lspconfig'.vimls.setup {
+    on_attach = on_attach,
+}
 
 -- yay -S yaml-language-server
 require'lspconfig'.yamlls.setup {}
@@ -40,5 +50,3 @@ require'lspconfig'.jsonls.setup {
     cmd = {"vscode-json-languageserver", "--stdio"}, -- yay install without dash
     init_options = {provideFormatter = false}
 }
-
-require"lsp_signature".setup()

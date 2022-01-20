@@ -5,12 +5,10 @@
 call plug#begin()
 
 """"""""Deliberation block""""""""""""""""
-Plug 'kdheepak/lazygit.nvim'
-" Plug 'tpope/vim-dotenv'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
 Plug 'gennaro-tedesco/nvim-peekup'
 """"""""""""""""""""""""""""""""""""""""""
 
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
 Plug '~/Workspace/vim-custom' " No need for installation (i.e. won't be copied, won't appear in PlugInstall)
 
 Plug 'mhinz/vim-startify'
@@ -47,7 +45,6 @@ Plug 'jiangmiao/auto-pairs' " replaced by coc-pairs
 Plug 'Valloric/MatchTagAlways'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'tpope/vim-commentary'
-" Plug 'b3nj5m1n/kommentary'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -60,8 +57,7 @@ Plug 'jremmen/vim-ripgrep' "Better, faster grep, use :Rg
 Plug 'michaelb/sniprun', {'do': 'bash install.sh 1', 'branch': 'dev'} " :SnipRun, :'<,'>SnipRun,:SnipInfo
 Plug 'neovim/nvim-lspconfig' " you must install language server independently (e.g. yay -S typescript-language-server)
 Plug 'kabouzeid/nvim-lspinstall' " :h
-" Plug 'glepnir/lspsaga.nvim' " LSP looks good (e.g. menu)
-Plug 'tami5/lspsaga.nvim', {'branch': 'nvim51'} " Temp fix 5.1 bug
+Plug 'glepnir/lspsaga.nvim' " LSP looks good (e.g. menu)
 Plug 'hrsh7th/nvim-compe' " LSP completion
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'ray-x/lsp_signature.nvim'
@@ -73,7 +69,6 @@ Plug 'mattn/efm-langserver' " For formatting
 Plug 'mboughaba/i3config.vim' " i3 config syntax highlight
 Plug 'RRethy/vim-illuminate' " highlight symbol under cursor
 Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'ap/vim-css-color'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'vim-test/vim-test'
@@ -109,7 +104,7 @@ luafile ~/.config/nvim/config/illuminate.lua
 luafile ~/.config/nvim/config/lsp/saga.lua
 " luafile ~/.config/nvim/config/lsp/lspinstall.lua
 luafile ~/.config/nvim/config/lsp/efm.lua
-luafile ~/.config/nvim/config/lsp/misc.lua
+" luafile ~/.config/nvim/config/lsp/misc.lua
 luafile ~/.config/nvim/config/lsp/python.lua
 luafile ~/.config/nvim/config/lsp/typescript.lua
 luafile ~/.config/nvim/config/lsp/lua.lua

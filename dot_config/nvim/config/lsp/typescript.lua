@@ -16,6 +16,7 @@ end
 
 local function on_attach(client)
     client.resolved_capabilities.document_formatting = false
+    require "lsp_signature".on_attach()
 end
 
 lspconfig.tsserver.setup {

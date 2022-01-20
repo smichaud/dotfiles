@@ -1,5 +1,51 @@
 priority -50
 
+snippet week "Log week" b
+`!p
+from datetime import datetime, timedelta
+
+next_week_day = lambda date, day: date + timedelta(days=(day - date.weekday() + 7) % 7)
+next_monday = next_week_day(datetime.now(), 0)
+output = ""
+for i in reversed(range(5)):
+    output_date = (next_monday + timedelta(days=i)).strftime("%Y-%m-%d %A")
+    output += f"- **{output_date}**\n"
+    output += f"  - 22-R&D-705-INF-IFT Sewer Inspection ()\n"
+    output += f"  - 22-R&D-705-INF-ADM Sewer Inspection ()\n"
+
+snip.rv=output
+`
+endsnippet
+
+snippet day4 "Log day + 4" b
+- **`date -d "+4 days" "+%Y-%m-%d %A"`**
+  - 22-R&D-705-INF-IFT Sewer Inspection ()
+  - 22-R&D-705-INF-ADM Sewer Inspection ()
+endsnippet
+
+snippet day3 "Log day + 3" b
+- **`date -d "+3 days" "+%Y-%m-%d %A"`**
+  - 22-R&D-705-INF-IFT Sewer Inspection ()
+  - 22-R&D-705-INF-ADM Sewer Inspection ()
+endsnippet
+
+snippet day2 "Log day + 2" b
+- **`date -d "+2 days" "+%Y-%m-%d %A"`**
+  - 22-R&D-705-INF-IFT Sewer Inspection ()
+  - 22-R&D-705-INF-ADM Sewer Inspection ()
+endsnippet
+
+snippet day1 "Log day + 1" b
+- **`date -d "+1 days" "+%Y-%m-%d %A"`**
+  - 22-R&D-705-INF-IFT Sewer Inspection ()
+  - 22-R&D-705-INF-ADM Sewer Inspection ()
+endsnippet
+
+snippet day "Log day" b
+- **`date "+%Y-%m-%d %A"`**
+  - 22-R&D-705-INF-IFT Sewer Inspection ()
+  - 22-R&D-705-INF-ADM Sewer Inspection ()
+endsnippet
 snippet sec "Section" b
 # ${1:Section Name} #
 $0

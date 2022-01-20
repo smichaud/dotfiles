@@ -5,3 +5,5 @@
 	rebase = false
 [core]
 	excludesfile = /home/smichaud/.gitignore_global
+[push]
+	default = current

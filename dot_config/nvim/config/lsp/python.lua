@@ -20,6 +20,9 @@ require('lspconfig').pyright.setup({
     -- ...
     before_init = function(_, config)
         config.settings.python.pythonPath = get_python_path(config.root_dir)
+    end,
+    on_attach = function()
+        require "lsp_signature".on_attach()
     end
 })
 

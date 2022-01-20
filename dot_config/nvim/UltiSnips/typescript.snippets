@@ -6,6 +6,18 @@ extends javascript
 priority -49
 
 
+snippet tsx "react component" b
+import React from "react";
+
+interface Props {
+    propName?: string;
+}
+
+export function ComponentName({ propName }: Props) {
+    return (<div></div>)
+}
+endsnippet
+
 snippet div "div" i
 <div>$0</div>
 endsnippet
@@ -135,10 +147,8 @@ const [${1:var}, set${1/\w+/\u$0/g}] = useState<${2:type}>(${3:defaultValue});${
 endsnippet
 
 snippet testfile "Jest describe" b
-import { render, screen, waitFor } from "@testing-library/react";
-
 jest.mock("../toMock");
-describe("${1:}", () => {
+describe("$1", () => {
 	it("$2", () => {
 		const value = false;
 		expect(value).toBeFalsy();$0
@@ -218,7 +228,7 @@ const spyConvertAllToString = jest.spyOn(convertArrayValues, "convertAllToString
 endsnippet
 
 snippet f "arrow function" i
-(${1:args})${2:: type} => {${3:code}}${0}
+(${1:args}) => {${2:code}}${0}
 endsnippet
 
 snippet style "Material UI style"

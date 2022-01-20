@@ -11,3 +11,8 @@ endsnippet
 snippet truncate "select * from..." w
 truncate "${1:table}" CASCADE
 endsnippet
+
+
+snippet insert "select * from..." w
+insert into "${1:table}" (${2:column}) values ('${3:value}')
+endsnippet
