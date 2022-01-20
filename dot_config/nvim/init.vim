@@ -57,7 +57,8 @@ Plug 'jremmen/vim-ripgrep' "Better, faster grep, use :Rg
 Plug 'michaelb/sniprun', {'do': 'bash install.sh 1', 'branch': 'dev'} " :SnipRun, :'<,'>SnipRun,:SnipInfo
 Plug 'neovim/nvim-lspconfig' " you must install language server independently (e.g. yay -S typescript-language-server)
 Plug 'kabouzeid/nvim-lspinstall' " :h
-Plug 'glepnir/lspsaga.nvim' " LSP looks good (e.g. menu)
+" Plug 'glepnir/lspsaga.nvim' " Old version, cause error method textDocument/codeAction...
+Plug 'tami5/lspsaga.nvim' " LSP looks good (e.g. menu)
 Plug 'hrsh7th/nvim-compe' " LSP completion
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'ray-x/lsp_signature.nvim'
