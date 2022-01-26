@@ -185,7 +185,7 @@ alias ptu='poetry update'
 alias ptr='poetry run '
 alias ptrp='poetry run python '
 alias ptrpm='poetry run python main.py'
-alias ptrpt='poetry run pytest --disable-pytest-warnings'
+alias ptrpt='poetry run pytest --disable-pytest-warnings -v'
 alias ptrptnotend='poetry run pytest -m "not end_to_end" --disable-pytest-warnings'
 alias pts='poetry shell '
 
