@@ -7,7 +7,7 @@ yay -S snapd
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
-pipx install poetry
+pipx install poetry, black, isort
 mkdir -p ~/.zsh/completions
 poetry completions zsh >~/.zsh/completions/_poetry
 poetry config virtualenvs.in-project true
