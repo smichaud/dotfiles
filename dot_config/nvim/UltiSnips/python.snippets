@@ -621,7 +621,7 @@ endsnippet
 snippet pytfix "pytest fixture" b
 @pytest.fixture(${1:autouse=True, scope="module"})
 def mock_${2:fixture_name}(${3:mocker}):
-    return mocker.patch("${0:patched_mock}")
+    return mocker.patch(f"${0:\{TESTED_MODULE\}.patched_mock}")
 endsnippet
 
 snippet mocker "mocker pytest fixture" b
