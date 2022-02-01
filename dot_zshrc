@@ -269,6 +269,7 @@ alias tree='tree --dirsfirst '
 alias yayu='yay -Syu --devel'
 alias yayr='yay -R'
 alias yaysearchinstalled='yay -Qqe | grep'
+alias drag="dragon-drag-and-drop"
 
 # Search yay with fzf
 yays() {
