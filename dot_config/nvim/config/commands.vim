@@ -13,4 +13,4 @@ command Gitps :Git push
 command Gitpl :Git pull
 command -nargs=* Gitz :Git stash
 
-
+command CpFilename :! echo % | xclip -selection clipboard

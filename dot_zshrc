@@ -20,6 +20,7 @@ fi
 
 export PYTHONSTARTUP=~/.pythonrc
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.yarn/bin
 export PATH=$PATH:~/Programs/gcloud
 export PATH=$PATH:~/Programs/k9s_Linux_x86_64
 #export PATH=$PATH:~/Programs/kubectl_1_18_0
@@ -269,7 +270,8 @@ alias tree='tree --dirsfirst '
 alias yayu='yay -Syu --devel'
 alias yayr='yay -R'
 alias yaysearchinstalled='yay -Qqe | grep'
-alias drag="dragon-drag-and-drop"
+alias drag="dragon-drag-and-drop --and-exit"
+alias draghere="dragon-drag-and-drop --target --and-exit"
 
 # Search yay with fzf
 yays() {
@@ -366,6 +368,7 @@ alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
 alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions'
 alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
 alias xioreport='cd ~/Workspace/pipe-inspection/services/report_generation'
+alias xiotranscodeapi='cd ~/Workspace/pipe-inspection/services/transcode_api'
 
 alias xiofrontend='cd ~/Workspace/pipe-inspection/frontend/'
 alias xiojsclient='cd ~/Workspace/pipe-inspection/frontend/libs/client/'

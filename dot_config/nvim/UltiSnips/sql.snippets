@@ -5,7 +5,9 @@ select ${1:star} from "${2:table}" where ${3:"column"='value'} limit ${4:200}$0
 endsnippet
 
 snippet update "update" w
-update ${1:table} set ${2:"column1"='textValue', "column2" = TRUE} where ${3:id = 'uuid'} limit ${4:200}$0
+UPDATE ${1:"user"}
+SET ${2:is_super_user} = ${3:FALSE}, ${4:active} = ${5:FALSE}
+WHERE ${6:id} = ${7:'77ff3183-1bf9-40f9-b704-8ae39fbe0bae'}$0
 endsnippet
 
 snippet truncate "select * from..." w
@@ -15,4 +17,8 @@ endsnippet
 
 snippet insert "select * from..." w
 insert into "${1:table}" (${2:column}) values ('${3:value}')
+endsnippet
+
+snippet delete "delete from..." w
+delete from "${1:table}" where ${2:column} = '${3:value}'
 endsnippet
