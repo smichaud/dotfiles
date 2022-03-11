@@ -13,4 +13,4 @@ command Gitps :Git push
 command Gitpl :Git pull
 command -nargs=* Gitz :Git stash
 
-command CpFilename :silent exec "!echo % | xclip -selection clipboard"
+command CpFilename :silent exec "!echo -n % | xclip -selection clipboard"

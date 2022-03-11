@@ -199,8 +199,11 @@ alias yt='DEBUG_PRINT_LIMIT=0 yarn test'
 alias setenv='set -a && source .env'
 
 ##### Docker
+alias dis='docker images '
 alias di='docker image '
-alias dc='docker container '
+alias dirm='docker image rm'
+alias dirmn='docker stop $(docker ps | grep pixu | awk {'print $1'})'
+alias docc='docker container '
 
 ##### Git
 alias gitco='git checkout '
@@ -363,12 +366,14 @@ alias xiotools='cd ~/Workspace/pipe-inspection/tools'
 alias xiochangelog='cd ~/Workspace/pipe-inspection/tools/changelog'
 
 alias xioservices='cd ~/Workspace/pipe-inspection/services'
+alias xioemails='cd ~/Workspace/pipe-inspection/services/emails'
 alias xiopro='cd ~/Workspace/pipe-inspection/services/profiler/'
 alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
 alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions'
 alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
 alias xioreport='cd ~/Workspace/pipe-inspection/services/report_generation'
 alias xiotranscodeapi='cd ~/Workspace/pipe-inspection/services/transcode_api'
+alias xiostitching360='cd ~/Workspace/pipe-inspection/services/stitching360'
 
 alias xiofrontend='cd ~/Workspace/pipe-inspection/frontend/'
 alias xiojsclient='cd ~/Workspace/pipe-inspection/frontend/libs/client/'

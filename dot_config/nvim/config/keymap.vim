@@ -123,6 +123,9 @@ nnoremap <leader>q :Bdelete<CR>
 " MarkdownPreview
 nnoremap <leader>xm :MarkdownPreview<CR>
 
+" Rooter
+nnoremap <leader>tr :RooterToggle<CR>
+
 " General/Builtin
 nnoremap <leader>; A;<Esc>
 noremap <leader>ciw viwpgvy
