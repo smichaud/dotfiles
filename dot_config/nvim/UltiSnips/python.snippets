@@ -603,10 +603,11 @@ endsnippet
 snippet pytestc "pytest file template" b
 import pytest 
 from unittest import mock
+from pytest_mock import MockerFixture
 
 class Test${1:WhatIsTested}:
 	@pytest.mark.${2:unit}
-	def test_given${3:}_when${4:}_then${5:}(self${6:, fixtures}):
+	def test_given${3:}_when${4:}_then${5:}(self, ${6:, fixtures}):
 		${0:pytest.fail("Not implemented")}
 
 endsnippet
@@ -620,7 +621,7 @@ endsnippet
 
 snippet pytfix "pytest fixture" b
 @pytest.fixture(${1:autouse=True, scope="module"})
-def mock_${2:fixture_name}(${3:mocker}):
+def mock_${2:fixture_name}(${3:mocker: MockerFixture}) -> Mock:
     return mocker.patch(f"${0:\{TESTED_MODULE\}.patched_mock}")
 endsnippet
 
