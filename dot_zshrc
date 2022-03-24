@@ -275,6 +275,7 @@ alias yayr='yay -R'
 alias yaysearchinstalled='yay -Qqe | grep'
 alias drag="dragon-drag-and-drop --and-exit"
 alias draghere="dragon-drag-and-drop --target --and-exit"
+alias rmrf='rm -rf'
 
 # Search yay with fzf
 yays() {
