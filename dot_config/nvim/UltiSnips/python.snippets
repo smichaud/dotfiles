@@ -595,7 +595,7 @@ import pytest
 
 @pytest.mark.${1:unit}
 class TestWhen${2:}:
-	def test_given${3:}_then${4:}(${5:fixtures}):
+	def test_given${3:}_then${4:}(self, ${5:fixtures}):
 		${0:pytest.fail("TODO: Not implemented")}
 
 endsnippet
@@ -621,7 +621,7 @@ endsnippet
 
 snippet pytfix "pytest fixture" b
 @pytest.fixture(${1:autouse=True, scope="module"})
-def mock_${2:fixture_name}(${3:mocker: MockerFixture}) -> Mock:
+def mocked_${2:fixture_name}(${3:mocker: MockerFixture}) -> Mock:
     return mocker.patch(f"${0:\{TESTED_MODULE\}.patched_mock}")
 endsnippet
 

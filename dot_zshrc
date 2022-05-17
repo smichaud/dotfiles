@@ -180,7 +180,7 @@ alias i3config='nvim ~/.local/share/chezmoi/dot_i3/config'
 
 # Python Poetry
 alias pt='poetry '
-alias pti='poetry install '
+alias pti='rm -rf $HOME/.cache/pypoetry/artifacts/ && poetry install '
 alias pta='poetry add '
 alias ptu='poetry update'
 alias ptr='poetry run '
@@ -325,16 +325,6 @@ alias xioddb='cd ~/Workspace/pipe-inspection/dashdev/backend'
 
 alias docs='cd ~/Workspace/docs'
 
-alias nord='cd ~/Workspace/nordikeau/'
-alias nordb='cd ~/Workspace/nordikeau/backend'
-alias nordbs='cd ~/Workspace/nordikeau/backend && yarn start'
-alias nordbss='cd ~/Workspace/nordikeau/backend && yarn install && yarn migration:up && yarn start'
-alias nordf='cd ~/Workspace/nordikeau/webapp'
-alias nordfs='cd ~/Workspace/nordikeau/webapp && yarn start'
-alias nordfss='cd ~/Workspace/nordikeau/webapp && yarn install && yarn start'
-
-alias forms='cd ~/Workspace/forms-solution'
-
 alias xiok8s='cd ~/Workspace/k8s-stuff'
 
 alias xio='cd ~/Workspace/pipe-inspection'
@@ -367,6 +357,7 @@ alias xiotools='cd ~/Workspace/pipe-inspection/tools'
 alias xiochangelog='cd ~/Workspace/pipe-inspection/tools/changelog'
 
 alias xioservices='cd ~/Workspace/pipe-inspection/services'
+alias xiovisceral='cd ~/Workspace/pipe-inspection/services/visceral'
 alias xioemails='cd ~/Workspace/pipe-inspection/services/emails'
 alias xiopro='cd ~/Workspace/pipe-inspection/services/profiler/'
 alias xiopreds='cd ~/Workspace/pipe-inspection/services/predictions'
@@ -374,6 +365,7 @@ alias xiosubpreds='cd ~/Workspace/pipe-inspection/services/subvalues_predictions
 alias xiopixu='cd ~/Workspace/pipe-inspection/services/pixu'
 alias xioreport='cd ~/Workspace/pipe-inspection/services/report_generation'
 alias xiotranscodeapi='cd ~/Workspace/pipe-inspection/services/transcode_api'
+alias xiocutie='cd ~/Workspace/pipe-inspection/services/cutie'
 alias xiostitching360='cd ~/Workspace/pipe-inspection/services/stitching360'
 
 alias xiofrontend='cd ~/Workspace/pipe-inspection/frontend/'

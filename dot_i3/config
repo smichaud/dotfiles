@@ -113,7 +113,7 @@ mode "$mode_system" {
 
 bindsym $mod+s exec flameshot gui
 bindsym $mod+Shift+s exec peek
-bindsym $mod+t exec --no-startup-id teamspeak3
+bindsym $mod+t exec --no-startup-id pkill Discord && pkill Discord && discord
 bindsym $mod+Shift+t exec --no-startup-id teams --no-sandbox
 bindsym $mod+c exec --no-startup-id google-chrome-stable
 
