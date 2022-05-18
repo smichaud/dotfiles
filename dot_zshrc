@@ -194,6 +194,7 @@ alias pts='poetry shell '
 alias yi='yarn install'
 alias ys='yarn start'
 alias yt='DEBUG_PRINT_LIMIT=0 yarn test'
+alias yesl='yarn eslint --max-warnings 0 --ext .tsx --ext .ts src/'
 
 ##### Set environment variable (replace pipenv feature for me)
 alias setenv='set -a && source .env'

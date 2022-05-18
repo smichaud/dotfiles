@@ -1,5 +1,15 @@
-local organizeImports = {formatCommand = "organize-imports-cli -", formatStdin = true}
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
+
+-- Will need to install eslint_d and prettier-eslint_d
+-- npm install -g eslint_d prettier-eslint_d
+local eslint = {
+  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+  lintStdin = true,
+  lintFormats = {"%f:%l:%c: %m"},
+  lintIgnoreExitCode = true,
+  formatCommand = "eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT} | prettier --stdin-filepath ${INPUT}",
+  formatStdin = true
+}
 
 require"lspconfig".efm.setup {
     init_options = {documentFormatting = true, codeAction = false},
@@ -21,10 +31,14 @@ require"lspconfig".efm.setup {
                 }
             },
             sh = {{formatCommand = 'shfmt -ci -s -bn -i 4', formatStdin = true}},
-            javascript = {prettier},
-            javascriptreact = {prettier},
-            typescript = {prettier},
-            typescriptreact = {prettier},
+            -- javascript = {prettier},
+            -- javascriptreact = {prettier},
+            -- typescript = {prettier},
+            -- typescriptreact = {prettier},
+            javascript = {eslint},
+            javascriptreact = {eslint},
+            typescript = {eslint},
+            typescriptreact = {eslint},
             html = {prettier},
             css = {prettier},
             json = {prettier},
