@@ -39,9 +39,9 @@ require"lspconfig".efm.setup {
             javascriptreact = {eslint},
             typescript = {eslint},
             typescriptreact = {eslint},
+            json = {prettier},
             html = {prettier},
             css = {prettier},
-            json = {prettier},
             yaml = {prettier},
             markdown = {
                 {

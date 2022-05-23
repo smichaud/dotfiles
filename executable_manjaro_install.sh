@@ -25,6 +25,8 @@ yay -S --needed --noconfirm postgresql
 yay -S --needed --noconfirm docker docker-compose
 yay -S --needed --noconfirm \
     google-cloud-sdk kubectl k9s cloud-sql-proxy-bin unzip yay gnu-netcat geckodriver
+# To have the cluster context setup, go in
+# GCP > Kubenetes clusters > 3 dots menu > connect > copy and run the command
 yay -S --needed --noconfirm bitwarden-cli
 yay -S --needed --noconfirm ulauncher-git # Then install your extensions
 yay -S --needed --noconfirm pulseaudio-bluetooth
