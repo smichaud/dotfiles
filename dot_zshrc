@@ -258,8 +258,8 @@ alias gcs='gcloud compute ssh '
 alias ls='lsd --group-dirs=first'
 alias du='duf'
 alias top='btm' # bottom
-# alternative to 'curl' --> curlie 
-# alias cl='curlie'
+alias exti='exit'
+alias vpn='sudo openvpn --config ~/.ssh/smichaud__ssl_vpn_config.ovpn'
 
 ##### Command shortcuts
 alias ....="cd ../.."
@@ -310,6 +310,8 @@ alias please='sudo $(fc -ln -1)'
 alias vimtex='nvim . --servername VIM'
 
 # Quick cd
+alias desk='cd ~/Desktop'
+alias wasm='cd ~/Workspace/wasm/wasm-exploration'
 alias dbtools='cd ~/Workspace/prototypes/db-tools/'
 alias lu='cd ~/Workspace/linux-utils/'
 alias sandbox='cd ~/Workspace/sandbox'

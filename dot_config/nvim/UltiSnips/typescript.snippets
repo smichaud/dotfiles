@@ -93,7 +93,7 @@ endsnippet
 snippet logd "console.log with lines" i
 // TODO: Remove this log
 console.log("%c=========================================","color:magenta")
-console.log(${0:"value"})
+console.log(\`%c \$\{${0:variable}\}\`, "color:magenta")
 console.log("%c=========================================","color:magenta")
 endsnippet
 
