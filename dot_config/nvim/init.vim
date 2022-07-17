@@ -24,7 +24,6 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'moll/vim-bbye' " Delete buffer without closing windows (leader+q)
 
-
 Plug 'liuchengxu/vim-which-key' " Display available potential shortcuts 
 Plug 'phaazon/hop.nvim' " Acejump
 Plug 'jacquesbh/vim-showmarks' " In the gutter
