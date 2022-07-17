@@ -6,10 +6,13 @@ call plug#begin()
 
 """"""""Deliberation block""""""""""""""""
 Plug 'gennaro-tedesco/nvim-peekup'
+" Check 
+" Plug 'nvim-neotest/neotest'
+" Debug: https://www.youtube.com/watch?v=0moS8UHupGc&t=400s 
 """"""""""""""""""""""""""""""""""""""""""
 
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
-"Plug '~/Workspace/vim-custom' " No need for installation (i.e. won't be copied, won't appear in PlugInstall)
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
+Plug '~/Workspace/vim-custom' " No need for installation (i.e. won't be copied, won't appear in PlugInstall)
 
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
@@ -64,9 +67,9 @@ Plug 'RRethy/vim-illuminate' " highlight symbol under cursor
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-"Plug 'vim-test/vim-test'
-"Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-"Plug 'tpope/vim-projectionist' " GoTo Test, must create .projectionist.json
+Plug 'vim-test/vim-test'
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" Plug 'tpope/vim-projectionist' " GoTo Test, must create .projectionist.json
 Plug 'tpope/vim-dispatch' " Needed for projectionist + :Start command
 
 Plug 'tpope/vim-dadbod'
