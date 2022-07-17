@@ -1,3 +1,7 @@
 Host ssh.dev.azure.com
-    HostkeyAlgorithms +ssh-rsa
+    HostName ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/github
+    IdentitiesOnly yes
     PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa

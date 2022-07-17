@@ -8,14 +8,15 @@ call plug#begin()
 Plug 'gennaro-tedesco/nvim-peekup'
 """"""""""""""""""""""""""""""""""""""""""
 
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
-Plug '~/Workspace/vim-custom' " No need for installation (i.e. won't be copied, won't appear in PlugInstall)
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " shortcut: <C-e>
+"Plug '~/Workspace/vim-custom' " No need for installation (i.e. won't be copied, won't appear in PlugInstall)
 
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
 Plug 'kevinhwang91/rnvimr' " Ranger in vim
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ishan9299/nvim-solarized-lua'
 Plug 'kassio/neoterm'
 Plug 'mbbill/undotree'
 
@@ -23,13 +24,6 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'moll/vim-bbye' " Delete buffer without closing windows (leader+q)
 
-Plug 'ishan9299/nvim-solarized-lua'
-Plug 'rafamadriz/neon'
-Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'tjdevries/colorbuddy.vim'
-Plug 'tjdevries/gruvbuddy.nvim'
-Plug 'https://git.sr.ht/~novakane/kosmikoa.nvim'
-Plug 'maaslalani/nordbuddy'
 
 Plug 'liuchengxu/vim-which-key' " Display available potential shortcuts 
 Plug 'phaazon/hop.nvim' " Acejump
@@ -57,7 +51,6 @@ Plug 'jremmen/vim-ripgrep' "Better, faster grep, use :Rg
 Plug 'michaelb/sniprun', {'do': 'bash install.sh 1', 'branch': 'dev'} " :SnipRun, :'<,'>SnipRun,:SnipInfo
 Plug 'neovim/nvim-lspconfig' " you must install language server independently (e.g. yay -S typescript-language-server)
 Plug 'kabouzeid/nvim-lspinstall' " :h
-" Plug 'glepnir/lspsaga.nvim' " Old version, cause error method textDocument/codeAction...
 Plug 'tami5/lspsaga.nvim' " LSP looks good (e.g. menu)
 Plug 'hrsh7th/nvim-compe' " LSP completion
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
@@ -72,9 +65,9 @@ Plug 'RRethy/vim-illuminate' " highlight symbol under cursor
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'vim-test/vim-test'
-Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-projectionist' " GoTo Test, must create .projectionist.json
+"Plug 'vim-test/vim-test'
+"Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+"Plug 'tpope/vim-projectionist' " GoTo Test, must create .projectionist.json
 Plug 'tpope/vim-dispatch' " Needed for projectionist + :Start command
 
 Plug 'tpope/vim-dadbod'
