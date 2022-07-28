@@ -5,6 +5,7 @@
 	name = Sebastien Michaud
 [pull]
 	rebase = false
+	default = current
 [core]
 	excludesfile = /home/smichaud/.gitignore_global
 [push]

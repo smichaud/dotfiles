@@ -3,12 +3,12 @@ local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatSt
 -- Will need to install eslint_d and prettier-eslint_d
 -- npm install -g eslint_d prettier-eslint_d
 local eslint = {
-  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
-  lintStdin = true,
-  lintFormats = {"%f:%l:%c: %m"},
-  lintIgnoreExitCode = true,
-  formatCommand = "eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT} | prettier --stdin-filepath ${INPUT}",
-  formatStdin = true
+    lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+    lintStdin = true,
+    lintFormats = {"%f:%l:%c: %m"},
+    lintIgnoreExitCode = true,
+    formatCommand = "eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT} | prettier --stdin-filepath ${INPUT}",
+    formatStdin = true
 }
 
 require"lspconfig".efm.setup {
@@ -66,3 +66,4 @@ vim.api.nvim_command('autocmd BufWritePre *.ts,*.tsx lua vim.lsp.buf.formatting_
 
 vim.api.nvim_command('autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)')
 
+vim.api.nvim_command('autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)')

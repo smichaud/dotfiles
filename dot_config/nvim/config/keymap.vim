@@ -20,6 +20,8 @@ nnoremap <silent> <leader>rn <cmd>lua require('lspsaga.rename').rename()<CR>
 nnoremap <silent> <leader>rf <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>ri :OrganizeImports<CR>
 
+nnoremap <leader>lr :LspRestart<CR>
+
 " LazyGit
 nnoremap <leader>og :LazyGit<CR>
 

@@ -207,6 +207,17 @@ alias dirmn='docker stop $(docker ps | grep pixu | awk {'print $1'})'
 alias docc='docker container '
 
 ##### Git
+# Just tring new git alias setup with `g cam` instead of gcam
+alias gs='git status -u'
+alias ga='git add '
+alias gco='git checkout '
+alias gcob='git checkout -b'
+alias gfa='git fetch --all '
+alias gpl='git pull '
+alias gps='git push '
+alias gtl="git fetch --all --tags && git tag -l --sort=-creatordate --format='%(creatordate):  %(refname:short) %(subject)'"
+# Just tring new git alias setup with `g cam` instead of gcam
+
 alias gitco='git checkout '
 alias gitcob='git checkout -b'
 
@@ -219,6 +230,7 @@ alias gitcam='git commit -am "'
 
 alias gitr='git rm '
 alias gitfa='git fetch --all '
+alias gitu='git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD) $(git symbolic-ref --short HEAD)'
 alias gitpl='git pull '
 alias gitps='git push '
 alias gitd='git diff '
@@ -319,18 +331,24 @@ alias exp='cd ~/Workspace/exp'
 alias expb='cd ~/Workspace/exp/backend'
 alias expf='cd ~/Workspace/exp/frontend/'
 
-alias ddb='cd ~/Workspace/pipe-inspection/dashdev/backend'
-alias ddf='cd ~/Workspace/pipe-inspection/dashdev/frontend'
-alias dda='cd ~/Workspace/pipe-inspection/dashdev/azure'
 alias xiodd='cd ~/Workspace/pipe-inspection/dashdev'
 alias xioddf='cd ~/Workspace/pipe-inspection/dashdev/frontend'
 alias xioddb='cd ~/Workspace/pipe-inspection/dashdev/backend'
 
+alias xionoz='cd ~/Workspace/pipe-inspection/nozzlecam/'
+alias xionozb='cd ~/Workspace/pipe-inspection/nozzlecam/backend'
+alias xionozf='cd ~/Workspace/pipe-inspection/nozzlecam/frontend'
+
 alias docs='cd ~/Workspace/docs'
 
-alias xiok8s='cd ~/Workspace/k8s-stuff'
 
 alias xio='cd ~/Workspace/pipe-inspection'
+alias xiodocs='cd ~/Workspace/pipe-inspection/documentation'
+alias xiotools='cd ~/Workspace/pipe-inspection/tools'
+alias xiok8s='cd ~/Workspace/k8s-stuff'
+alias xiopyclient='cd ~/Workspace/pipe-inspection/services/api_client'
+alias xioschemas='cd ~/Workspace/pipe-inspection/xpectio_schemas'
+alias xiochangelog='cd ~/Workspace/pipe-inspection/tools/changelog'
 
 alias xiob='cd ~/Workspace/pipe-inspection/backend'
 alias xiobs='cd ~/Workspace/pipe-inspection/backend && poetry run python main.py'
@@ -353,11 +371,6 @@ alias xiomldata='cd ~/Workspace/pipe-inspection/machine_learning/data_operations
 alias xiomldoc='cd ~/Workspace/pipe-inspection/machine_learning/documentation'
 alias xiomlproto='cd ~/Workspace/pipe-inspection/machine_learning/prototypes'
 
-alias xiopyclient='cd ~/Workspace/pipe-inspection/services/api_client'
-alias xioschemas='cd ~/Workspace/pipe-inspection/xpectio_schemas'
-
-alias xiotools='cd ~/Workspace/pipe-inspection/tools'
-alias xiochangelog='cd ~/Workspace/pipe-inspection/tools/changelog'
 
 alias xioservices='cd ~/Workspace/pipe-inspection/services'
 alias xiovisceral='cd ~/Workspace/pipe-inspection/services/visceral'
@@ -433,3 +446,4 @@ reset_permissions() {
 # Mount drive
 alias mountgt='sshfs pi@greenthumb.local:/home/pi/Workspace/pi/green-thumb/ /home/smichaud/Workspace/mounted-pi/'
 alias mountpiproto='sshfs pi@piproto.local:/home/pi/Workspace/pi/ /home/smichaud/Workspace/mounted-pi/'
+alias mountpinoz='sshfs canex@nozzlecam.local:/home/canex/pipe-inspection/nozzlecam/ /home/smichaud/Workspace/mounted-pi/'
